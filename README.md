@@ -1,38 +1,82 @@
-# Mantine Next.js template
+# Github Repo Directory Project
 
-This is a template for [Next.js](https://nextjs.org/) pages router + [Mantine](https://mantine.dev/).
-If you want to use app router instead, see [next-app-template](https://github.com/mantinedev/next-app-template).
+## Managing the Project with SDLC
 
-## Features
+While creating that project we wil use SDLC steps to create a managable and scalable project. Let's start
 
-This template comes with the following features:
+## 1 - Requirements Gathering & Analysis
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+- Identifying the project's scope.
+- Gathering requirements for the UI toolkit based on project needs (performance, customization, ease of use).
+- Researching potential users' needs and preferences regarding UI/UX.
+- Creating github issues for each requirements
 
-## npm scripts
+## 2 - Design
 
-### Build and dev scripts
+[x] Comparing the possible UI toolkits and libraries based on the requirements based on
+  -- Customizability
+  -- Performance
+  -- Community support and documentation
+  -- Compatibility with Next.js and Tailwind CSS
+[x] Finalizing the choice of UI toolkit.
+[x] Designing the application architecture.
+[x] Creating wireframes and mockups.
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
 
-### Testing scripts
+### UI Toolkit Comparison: Mantinw UI, Material UI, and Chakra UI
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+The comparison aims to assist in making an informed decision on the most suitable UI framework for our development needs.
 
-### Other scripts
+| Feature/Criteria          | Mantine UI                                  | Material UI                                         | Chakra UI                                           |
+| ------------------------- | ------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| **Customization**         | High customization with less effort.        | Extensive customization but can be more complex.    | Easy and flexible customization.                    |
+| **Performance**           | Optimized for speed and efficiency.         | Good, but can be heavy for complex applications.    | Balanced performance, good for dynamic UIs.         |
+| **Ease of Use**           | Simple API and easy to learn.               | Steep learning curve due to comprehensive features. | Intuitive API, easy to use and learn.               |
+| **Community Support**     | Growing community, responsive support.      | Large community, extensive resources and support.   | Strong community, good documentation and support.   |
+| **Documentation**         | Well-documented with examples.              | Extensive and detailed documentation.               | Comprehensive documentation with examples.          |
+| **Accessibility**         | Focus on accessibility with ARIA support.   | Strong emphasis on accessibility.                   | Good accessibility features and best practices.     |
+| **Mobile Responsiveness** | Fully responsive components.                | Responsive design is a core feature.                | Responsive components with mobile-first approach.   |
+| **Popularity**            | Increasing popularity, newer in the market. | Most popular, widely adopted.                       | Rapidly gaining popularity.                         |
+| **Unique Features**       | Lightweight, modern UI, less boilerplate.   | Material Design principles, rich components.        | Easy theming, focus on composition and flexibility. |
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+
+### UI Toolkit Decision
+
+- **Mantine UI** offers a balance between customization, ease of use, and performance, making it a strong candidate for projects prioritizing developer experience and speed.
+- **Material UI** is suited for applications that benefit from Material Design and require a comprehensive suite of components.
+- **Chakra UI** is ideal for projects that emphasize accessibility, simplicity, and ease of theming.
+
+As I am the only developer in the current project, I will choose the one which can be learned easily. So that after inspecting its Table component and other ready-to-go custom hooks, **Mantine UI** will be my choice.
+
+
+### Architecture of the Application
+
+
+### Wireframe of the Application
+
+
+## 3 - Implementation
+
+[x] Set upping the project repository.
+[x] Configuring Next.js, TypeScript and the chosen libraries
+[] Implementing the frontend features according to the design mockups.
+
+
+## 4 - Testing
+
+- Unit test individual components and services.
+- Integration test the combined parts of the application.
+- Perform user acceptance testing to ensure the app meets requirements.
+
+## 5 - Deployment
+
+- Set upping CI/CD pipelines.
+- Deploy the application to a staging environment.
+- Conducting final pre-launch checks.
+- Deploying the application to production.
+
+## 6 - Maintenance
+
+- Monitoring the application for issues.
+- Updating dependencies and the UI toolkit as needed.
+- Continuously improving the application based on user feedbacks.
