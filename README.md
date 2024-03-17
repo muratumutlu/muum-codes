@@ -55,26 +55,26 @@ As I am the only developer in the current project, I will choose the one which c
 
 ## 3 - Implementation
 
-[x] Set upping the project repository.
-[x] Configuring Next.js, TypeScript and the chosen libraries
-[] Implementing the frontend features according to the design mockups.
+- [x] Set upping the project repository.
+- [x] Configuring Next.js, TypeScript and the chosen libraries
+- [ ] Implementing the frontend features according to the design mockups.
 
 
 ## 4 - Testing
 
-- Unit test individual components and services.
-- Integration test the combined parts of the application.
-- Perform user acceptance testing to ensure the app meets requirements.
+- [ ] Unit test individual components and services.
+- [ ] Integration test the combined parts of the application.
+- [ ] Perform user acceptance testing to ensure the app meets requirements.
 
 ## 5 - Deployment
 
-- Set upping CI/CD pipelines.
-- Deploy the application to a staging environment.
-- Conducting final pre-launch checks.
-- Deploying the application to production.
+- [ ] Set upping CI/CD pipelines.
+- [ ] Deploy the application to a staging environment.
+- [ ] Conducting final pre-launch checks.
+- [ ] Deploying the application to production.
 
 ## 6 - Maintenance
 
-- Monitoring the application for issues.
-- Updating dependencies and the UI toolkit as needed.
-- Continuously improving the application based on user feedbacks.
+- [ ] Monitoring the application for issues.
+- [ ] Updating dependencies and the UI toolkit as needed.
+- [ ] Continuously improving the application based on user feedbacks.
