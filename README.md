@@ -6,21 +6,17 @@ While creating that project we wil use SDLC steps to create a managable and scal
 
 ## 1 - Requirements Gathering & Analysis
 
-- Identifying the project's scope.
-- Gathering requirements for the UI toolkit based on project needs (performance, customization, ease of use).
-- Researching potential users' needs and preferences regarding UI/UX.
-- Creating github issues for each requirements
+- [x] Identifying the project's scope.
+- [x] Gathering requirements for the UI toolkit based on project needs (performance, customization, ease of use).
+- [x] Researching potential users' needs and preferences regarding UI/UX.
+- [x] Creating github issues for each requirements
 
 ## 2 - Design
 
-[x] Comparing the possible UI toolkits and libraries based on the requirements based on
-  -- Customizability
-  -- Performance
-  -- Community support and documentation
-  -- Compatibility with Next.js and Tailwind CSS
-[x] Finalizing the choice of UI toolkit.
-[x] Designing the application architecture.
-[x] Creating wireframes and mockups.
+- [x] Comparing the possible UI toolkits and libraries based on the requirements based on Customizability, Performance, Community support and documentation
+- [x] Finalizing the choice of UI toolkit.
+- [x] Designing the application architecture.
+- [x] Creating wireframes and mockups.
 
 
 ### UI Toolkit Comparison: Mantinw UI, Material UI, and Chakra UI
@@ -50,9 +46,11 @@ As I am the only developer in the current project, I will choose the one which c
 
 
 ### Architecture of the Application
+![Ekran Resmi 2024-03-17 23 27 23](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/091e3395-b4b8-4107-baf6-89e4c794f5f4)
 
 
 ### Wireframe of the Application
+![Ekran Resmi 2024-03-17 23 27 34](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/343ebb26-2b61-471d-8bbe-c091be6007f4)
 
 
 ## 3 - Implementation
