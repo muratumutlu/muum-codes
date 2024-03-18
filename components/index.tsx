@@ -6,6 +6,7 @@ export { default as ThemeSwitcher } from './atoms/ThemeSwitcher/ThemeSwitcher.co
 // MOLECULES
 export { default as CustomCard } from './molecules/CustomCard/CustomCard.component';
 export { default as Filter } from './molecules/Filter/Filter.component';
+export { default as MetaTags } from './molecules/MetaTags/MetaTags.component';
 export { default as RepoTable } from './molecules/RepoTable/RepoTable.component';
 export { default as SearchInput } from './molecules/SearchInput/SearchInput.component';
 

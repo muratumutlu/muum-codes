@@ -1,5 +1,13 @@
 /* eslint-disable import/order */
-import { CustomCard, Filter, Hero, HomePageTemplate, RepoTable, SearchInput } from '@/components';
+import {
+  CustomCard,
+  Filter,
+  Hero,
+  HomePageTemplate,
+  MetaTags,
+  RepoTable,
+  SearchInput,
+} from '@/components';
 import filterOptions from '@/data/filterOptions';
 import { selectFilter, setFilter, setSearchTerm } from '@/store/filter/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,6 +26,7 @@ export default function HomePage() {
 
   return (
     <HomePageTemplate>
+      <MetaTags type="homepage" />
       <Hero />
       <CustomCard>
         <SearchInput value={searchTerm} onChange={handleSearchChange} />

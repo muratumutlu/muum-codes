@@ -25,6 +25,7 @@ import { CustomCard } from '@/components';
 import type { SortBy } from '@/types/Filter.types';
 
 const RepoTable: React.FC = () => {
+  const dispatch = useDispatch();
   const { filter, searchTerm, sortBy, orderBy, currentPage, totalPages } =
     useSelector(selectFilter);
 
@@ -36,7 +37,9 @@ const RepoTable: React.FC = () => {
     currentPage
   );
 
-  const dispatch = useDispatch();
+  const handleRepoClick = (repo: any) => {
+    window.open(repo, '_blank');
+  };
 
   const handlePageChange = (page: number) => {
     dispatch(setCurrentPage(page));
@@ -58,7 +61,11 @@ const RepoTable: React.FC = () => {
   };
 
   const rows = items?.map((repo: any) => (
-    <Table.Tr key={repo.id}>
+    <Table.Tr
+      key={repo.id}
+      onClick={() => handleRepoClick(repo.svn_url)}
+      style={{ cursor: 'pointer' }}
+    >
       <Table.Td className={classes.id}>
         <Text>{repo.id}</Text>
       </Table.Td>

@@ -1,0 +1,151 @@
+{
+  "sections": [
+    {
+      "title": "Managing the Project with SDLC",
+      "content": "While creating that project we will use SDLC steps to create a manageable and scalable project. Let's start"
+    },
+    {
+      "title": "1 - Requirements Gathering & Analysis",
+      "checklistItems": [
+        "Identifying the project's scope.",
+        "Gathering requirements for the UI toolkit based on project needs.",
+        "Researching potential users' needs and preferences regarding UI/UX.",
+        "Creating github issues for each requirement"
+      ]
+    },
+    {
+      "title": "2 - Design",
+      "checklistItems": [
+        "Comparing the possible UI toolkits and libraries based on the requirements",
+        "Finalizing the choice of UI toolkit.",
+        "Designing the application architecture.",
+        "Creating wireframes and mockups."
+      ]
+    },
+    {
+      "title": "UI Toolkit Comparison: Mantine UI, Material UI, and Chakra UI",
+      "table": {
+        "headers": ["Feature/Criteria", "Mantine UI", "Material UI", "Chakra UI"],
+        "rows": [
+          {
+            "criteria": "Customization",
+            "Mantine UI": "High customization with less effort.",
+            "Material UI": "Extensive customization but can be more complex.",
+            "Chakra UI": "Easy and flexible customization."
+          },
+          {
+            "criteria": "Performance",
+            "Mantine UI": "Optimized for speed and efficiency.",
+            "Material UI": "Good, but can be heavy for complex applications.",
+            "Chakra UI": "Balanced performance, good for dynamic UIs."
+          },
+          {
+            "criteria": "Ease of Use",
+            "Mantine UI": "Simple API and easy to learn.",
+            "Material UI": "Steep learning curve due to comprehensive features.",
+            "Chakra UI": "Intuitive API, easy to use and learn."
+          },
+          {
+            "criteria": "Community Support",
+            "Mantine UI": "Growing community, responsive support.",
+            "Material UI": "Large community, extensive resources and support.",
+            "Chakra UI": "Strong community, good documentation and support."
+          },
+          {
+            "criteria": "Accessibility",
+            "Mantine UI": "Focus on accessibility with ARIA support.",
+            "Material UI": "Strong emphasis on accessibility.",
+            "Chakra UI": "Good accessibility features and best practices."
+          },
+          {
+            "criteria": "Mobile Responsiveness",
+            "Mantine UI": "Fully responsive components.",
+            "Material UI": "Responsive design is a core feature.",
+            "Chakra UI": "Responsive components with mobile-first approach."
+          },
+          {
+            "criteria": "Popularity",
+            "Mantine UI": "Increasing popularity, newer in the market.",
+            "Material UI": "Most popular, widely adopted.",
+            "Chakra UI": "Rapidly gaining popularity."
+          },
+          {
+            "criteria": "Unique Features",
+            "Mantine UI": "Lightweight, modern UI, less boilerplate.",
+            "Material UI": "Material Design principles, rich components.",
+            "Chakra UI": "Easy theming, focus on composition and flexibility."
+          }
+        ]
+      }
+    },
+    {
+      "title": "UI Toolkit Decision",
+      "decisions": [
+        {
+          "name": "Mantine UI",
+          "description": "offers a balance between customization, ease of use, and performance, making it a strong candidate for projects prioritizing developer experience and speed."
+        },
+        {
+          "name": "Material UI",
+          "description": "is suited for applications that benefit from Material Design and require a comprehensive suite of components."
+        },
+        {
+          "name": "Chakra UI",
+          "description": "is ideal for projects that emphasize accessibility, simplicity, and ease of theming."
+        }
+      ],
+      "conclusion": "As I am the only developer in the current project, I will choose the one which can be learned easily. So that after inspecting its Table component and other ready-to-go custom hooks, Mantine UI is my choice."
+    },
+    {
+      "title": "Architecture of the Application",
+      "image": {
+        "src": "https://private-user-images.githubusercontent.com/6642361/313503680-343ebb26-2b61-471d-8bbe-c091be6007f4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTA3NjM3NDQsIm5iZiI6MTcxMDc2MzQ0NCwicGF0aCI6Ii82NjQyMzYxLzMxMzUwMzY4MC0zNDNlYmIyNi0yYjYxLTQ3MWQtOGJiZS1jMDkxYmU2MDA3ZjQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDMxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAzMThUMTIwNDA0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWY5MzYwODE5NDgxN2E3ZDU3YTIxNGYwZjNmMjliMDM2YmFlMjY1OTk4YmJiNGYwMDFmYTg0YTYwNjFmMzJkNCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.gf-2z94AjXjcSK_9nF8RS2TXd1PBjlN2XiQemYNNB7k",
+        "alt": "Wireframe of the Application"
+      }
+    },
+    {
+      "title": "Wireframe of the Application",
+      "image": {
+        "src": "https://private-user-images.githubusercontent.com/6642361/313503680-343ebb26-2b61-471d-8bbe-c091be6007f4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTA3NjM3NDQsIm5iZiI6MTcxMDc2MzQ0NCwicGF0aCI6Ii82NjQyMzYxLzMxMzUwMzY4MC0zNDNlYmIyNi0yYjYxLTQ3MWQtOGJiZS1jMDkxYmU2MDA3ZjQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDMxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAzMThUMTIwNDA0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWY5MzYwODE5NDgxN2E3ZDU3YTIxNGYwZjNmMjliMDM2YmFlMjY1OTk4YmJiNGYwMDFmYTg0YTYwNjFmMzJkNCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.gf-2z94AjXjcSK_9nF8RS2TXd1PBjlN2XiQemYNNB7k",
+        "alt": "Wireframe of the Application"
+      }
+    },
+    {
+      "title": "3 - Development (Implementation)",
+      "checklistItems": [
+        "Setting up the development environment.",
+        "Creating the UI toolkit components.",
+        "Configuring Next.js, TypeScript and the chosen libraries",
+        "Implementing the application's architecture.",
+        "Implementing the frontend features according to the design mockups.",
+        "Creating a responsive and accessible design."
+      ]
+    },
+    {
+      "title": "4 - Testing",
+      "checklistItems": [
+        "Creating unit tests for the UI toolkit components.",
+        "Testing the application's responsiveness and accessibility.",
+        "Performing usability testing with potential users."
+      ]
+    },
+    {
+      "title": "5 - Deployment",
+      "checklistItems": [
+        "Setting up the deployment environment. (Vercel)",
+        "Deploying the application to a staging environment. (You are here already) ",
+        "Performing user acceptance testing.",
+        "Deploying the application to production."
+      ]
+    },
+    {
+      "title": "6 - Maintenance (Goes on...)",
+      "checklistItems": [
+        "Monitoring the application's performance and user feedback.",
+        "Performing regular maintenance and updates.",
+        "Addressing any issues and bugs that arise.",
+        "Gathering feedback for future improvements."
+      ]
+    }
+  ]
+}

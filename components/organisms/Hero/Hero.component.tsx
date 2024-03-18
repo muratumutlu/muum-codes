@@ -14,9 +14,9 @@ function Hero() {
         </Text>
       </Title>
       <Text c="dimmed" ta="center" size="lg" maw={isMobile ? 300 : 800} mx="auto" mt="md">
-        Welcome to the Github Explorer. You can search for any repository on Github and see its
-        details in a beautiful table. That will help you to find the most starred repositories on
-        Github. Enjoy it!
+        Welcome to the Muum Codes&apos; Github Explorer. You can search for any repository on Github
+        and see its details in a beautiful table. That will help you to find the most starred
+        repositories on Github. Enjoy it!
       </Text>
     </Box>
   );
