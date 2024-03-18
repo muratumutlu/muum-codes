@@ -1,0 +1,4 @@
+.title {
+  font-weight: 900;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-5));
+}

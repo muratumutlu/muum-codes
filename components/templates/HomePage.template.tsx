@@ -1,3 +1,5 @@
+/* eslint-disable import/order */
+import { Footer } from '@/components';
 import { Container } from '@mantine/core';
 
 interface HomeTemplateProps {
@@ -5,5 +7,10 @@ interface HomeTemplateProps {
 }
 
 export default function HomeTemplate({ children }: HomeTemplateProps) {
-  return <Container size="xl">{children}</Container>;
+  return (
+    <>
+      <Container size="xl">{children}</Container>
+      <Footer />
+    </>
+  );
 }
