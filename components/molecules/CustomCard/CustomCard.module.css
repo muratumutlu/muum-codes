@@ -1,0 +1,15 @@
+.card {
+  width: 100%;
+  height: auto;
+  border: 1px solid #f6f6f60f;
+  box-shadow: 0px 0px 33px 9px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.body {
+  padding: 10px;
+}

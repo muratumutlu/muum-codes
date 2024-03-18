@@ -18,7 +18,6 @@ While creating that project we wil use SDLC steps to create a managable and scal
 - [x] Designing the application architecture.
 - [x] Creating wireframes and mockups.
 
-
 ### UI Toolkit Comparison: Mantinw UI, Material UI, and Chakra UI
 
 The comparison aims to assist in making an informed decision on the most suitable UI framework for our development needs.
@@ -35,7 +34,6 @@ The comparison aims to assist in making an informed decision on the most suitabl
 | **Popularity**            | Increasing popularity, newer in the market. | Most popular, widely adopted.                       | Rapidly gaining popularity.                         |
 | **Unique Features**       | Lightweight, modern UI, less boilerplate.   | Material Design principles, rich components.        | Easy theming, focus on composition and flexibility. |
 
-
 ### UI Toolkit Decision
 
 - **Mantine UI** offers a balance between customization, ease of use, and performance, making it a strong candidate for projects prioritizing developer experience and speed.
@@ -44,21 +42,24 @@ The comparison aims to assist in making an informed decision on the most suitabl
 
 As I am the only developer in the current project, I will choose the one which can be learned easily. So that after inspecting its Table component and other ready-to-go custom hooks, **Mantine UI** will be my choice.
 
-
 ### Architecture of the Application
+
 ![Ekran Resmi 2024-03-17 23 27 23](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/091e3395-b4b8-4107-baf6-89e4c794f5f4)
 
+![Ekran Resmi 2024-03-17 23 27 23](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/091e3395-b4b8-4107-baf6-89e4c794f5f4)
 
 ### Wireframe of the Application
+
 ![Ekran Resmi 2024-03-17 23 27 34](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/343ebb26-2b61-471d-8bbe-c091be6007f4)
 
+![Ekran Resmi 2024-03-17 23 27 34](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/343ebb26-2b61-471d-8bbe-c091be6007f4)
 
 ## 3 - Implementation
 
 - [x] Set upping the project repository.
 - [x] Configuring Next.js, TypeScript and the chosen libraries
-- [ ] Implementing the frontend features according to the design mockups.
-
+- [x] Implementing the frontend features according to the design mockups.
+- [x] Implementing the responsiveness.
 
 ## 4 - Testing
 
@@ -68,10 +69,10 @@ As I am the only developer in the current project, I will choose the one which c
 
 ## 5 - Deployment
 
-- [ ] Set upping CI/CD pipelines.
-- [ ] Deploy the application to a staging environment.
-- [ ] Conducting final pre-launch checks.
-- [ ] Deploying the application to production.
+- [x] Set upping CI/CD pipelines.
+- [x] Deploy the application to a staging environment.
+- [x] Conducting final pre-launch checks.
+- [x] Deploying the application to production.
 
 ## 6 - Maintenance
 

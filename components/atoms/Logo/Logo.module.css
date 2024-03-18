@@ -1,0 +1,10 @@
+.link {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 2rem;
+  letter-spacing: -2;
+  padding-right: 20;
+  cursor: pointer;
+}

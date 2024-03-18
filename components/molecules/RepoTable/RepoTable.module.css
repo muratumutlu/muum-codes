@@ -1,0 +1,31 @@
+.id {
+  width: 10%;
+  min-width: 80px;
+  border-top-left-radius: 8;
+}
+
+.description {
+  width: 45% !important;
+}
+
+.username {
+  width: 15% !important;
+}
+
+.stars,
+.forks,
+.lastUpdate {
+  min-width: 80px;
+  width: 10% !important;
+  cursor: pointer;
+}
+
+.lastUpdate {
+  border-top-right-radius: 8;
+}
+
+.tableContainer {
+  table-layout: fixed;
+  overflow-x: auto;
+  width: 100%;
+}
