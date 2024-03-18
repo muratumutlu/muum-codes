@@ -13,7 +13,7 @@ import {
   Table,
   Text,
 } from '@mantine/core';
-import { IconArrowNarrowDown, IconArrowNarrowUp } from '@tabler/icons-react';
+import { IconAlertCircle, IconArrowNarrowDown, IconArrowNarrowUp } from '@tabler/icons-react';
 
 import { beautifyDate } from '@/utils/date';
 
@@ -152,12 +152,18 @@ const RepoTable: React.FC = () => {
               {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
               {!isLoading && items?.length > 0 && <Table.Tbody>{rows}</Table.Tbody>}
               <Table.Caption>
-                <Center mt="sm">
-                  <Pagination total={totalPages} value={currentPage} onChange={handlePageChange} />
-                </Center>
+                <Flex align="center">
+                  <IconAlertCircle size={20} style={{ marginRight: 10 }} /> Click on a row to open
+                  the repository on Github
+                </Flex>
               </Table.Caption>
             </Table>
           </div>
+        </CustomCard>
+        <CustomCard>
+          <Center mt="sm">
+            <Pagination total={totalPages} value={currentPage} onChange={handlePageChange} />
+          </Center>
         </CustomCard>
       </Grid.Col>
     </Grid>
