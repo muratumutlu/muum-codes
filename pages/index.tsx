@@ -1,14 +1,12 @@
 /* eslint-disable import/order */
-import { useDispatch, useSelector } from 'react-redux';
-
 import { CustomCard, Filter, Hero, HomePageTemplate, RepoTable, SearchInput } from '@/components';
-
 import filterOptions from '@/data/filterOptions';
 import { selectFilter, setFilter, setSearchTerm } from '@/store/filter/filterSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function HomePage() {
-  const { filter, searchTerm } = useSelector(selectFilter);
   const dispatch = useDispatch();
+  const { filter, searchTerm } = useSelector(selectFilter);
 
   const handleFilterChange = (value: string) => {
     dispatch(setFilter(value));

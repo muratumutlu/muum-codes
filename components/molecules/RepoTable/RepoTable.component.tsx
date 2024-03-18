@@ -21,8 +21,8 @@ import { selectFilter, setCurrentPage, setOrderBy, setSortBy } from '@/store/fil
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './RepoTable.module.css';
 
+import { CustomCard } from '@/components';
 import type { SortBy } from '@/types/Filter.types';
-import CustomCard from '../CustomCard/CustomCard.component';
 
 const RepoTable: React.FC = () => {
   const { filter, searchTerm, sortBy, orderBy, currentPage, totalPages } =
