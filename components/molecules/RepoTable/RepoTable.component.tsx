@@ -5,7 +5,6 @@ import { useGithubData } from '@/hooks';
 import {
   Avatar,
   Badge,
-  Card,
   Center,
   Flex,
   Grid,
@@ -114,57 +113,45 @@ const RepoTable: React.FC = () => {
   return (
     <Grid mt="md">
       <Grid.Col span={12}>
-        <Card className={classes.tableContainer} p="xs">
-          <Table
-            striped
-            highlightOnHover
-            stickyHeader
-            stickyHeaderOffset={60}
-            verticalSpacing="sm"
-            withColumnBorders
-            captionSide="bottom"
-            style={{
-              minWidth: '600px', // Ensuring a minimum width for the table to enforce scrolling
-              width: '100%',
-              boxShadow: '0px 0px 33px 9px rgba(0, 0, 0, 0.1)',
-              borderRadius: 8,
-              tableLayout: 'fixed', // Ensure table layout is fixed
-            }}
-          >
-            <Table.Thead>
-              <Table.Tr>
-                <Table.Th className={classes.id}>
-                  <Flex justify="space-between">ID</Flex>
-                </Table.Th>
-                <Table.Th className={classes.username}>Username</Table.Th>
-                <Table.Th className={classes.description}>
-                  <Flex justify="space-between">Repo Description</Flex>
-                </Table.Th>
-                <Table.Th className={classes.stars} onClick={() => handleSortChange('stars')}>
-                  <Flex justify="space-between">Stars {getSortIcon('stars')}</Flex>
-                </Table.Th>
-                <Table.Th className={classes.forks} onClick={() => handleSortChange('forks')}>
-                  <Flex justify="space-between">Forks {getSortIcon('forks')}</Flex>
-                </Table.Th>
-                <Table.Th
-                  className={classes.lastUpdate}
-                  onClick={() => handleSortChange('lastUpdate')}
-                >
-                  <Flex justify="space-between">Last Update {getSortIcon('lastUpdate')}</Flex>
-                </Table.Th>
-              </Table.Tr>
-            </Table.Thead>
-            {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
-            {!isLoading && items?.length > 0 && <Table.Tbody>{rows}</Table.Tbody>}
-            <Table.Caption>
-              <CustomCard>
+        <CustomCard>
+          <div className={classes.tableContainer}>
+            <Table
+              striped
+              highlightOnHover
+              stickyHeader
+              verticalSpacing="sm"
+              withColumnBorders
+              captionSide="bottom"
+            >
+              <Table.Thead>
+                <Table.Tr>
+                  <Table.Th className={classes.id}>ID</Table.Th>
+                  <Table.Th className={classes.username}>Username</Table.Th>
+                  <Table.Th className={classes.description}>Repo Description</Table.Th>
+                  <Table.Th className={classes.stars} onClick={() => handleSortChange('stars')}>
+                    <Flex justify="space-between">Stars {getSortIcon('stars')}</Flex>
+                  </Table.Th>
+                  <Table.Th className={classes.forks} onClick={() => handleSortChange('forks')}>
+                    <Flex justify="space-between">Forks {getSortIcon('forks')}</Flex>
+                  </Table.Th>
+                  <Table.Th
+                    className={classes.lastUpdate}
+                    onClick={() => handleSortChange('lastUpdate')}
+                  >
+                    <Flex justify="space-between">Last Update {getSortIcon('lastUpdate')}</Flex>
+                  </Table.Th>
+                </Table.Tr>
+              </Table.Thead>
+              {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
+              {!isLoading && items?.length > 0 && <Table.Tbody>{rows}</Table.Tbody>}
+              <Table.Caption>
                 <Center mt="sm">
                   <Pagination total={totalPages} value={currentPage} onChange={handlePageChange} />
                 </Center>
-              </CustomCard>
-            </Table.Caption>
-          </Table>
-        </Card>
+              </Table.Caption>
+            </Table>
+          </div>
+        </CustomCard>
       </Grid.Col>
     </Grid>
   );
