@@ -44,8 +44,6 @@ const RepoTable: React.FC = () => {
   };
 
   const handleSortChange = (column: SortBy) => {
-    console.log('column', column, orderBy);
-
     if (sortBy === column) {
       dispatch(setOrderBy(orderBy === 'asc' ? 'desc' : 'asc'));
     } else {

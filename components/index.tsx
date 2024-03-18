@@ -14,3 +14,4 @@ export { default as Hero } from './organisms/Hero/Hero.component';
 
 // TEMPLATES
 export { default as HomePageTemplate } from './templates/HomePage.template';
+export { default as SinglePageTemplate } from './templates/SinglePage.template';

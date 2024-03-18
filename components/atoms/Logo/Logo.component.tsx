@@ -15,10 +15,8 @@ export default function Logo({ brand }: logoProps) {
           inherit
           variant="gradient"
           component="span"
-          className={classes.logo}
           gradient={{ from: 'pink', to: 'blue' }}
           fw={900}
-          fs="xl"
         >
           {brand}
         </Text>
