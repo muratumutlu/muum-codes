@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
 // pages/github-repo-directory.js or a similar path
-import { CustomCard, SinglePageTemplate } from '@/components';
+import { CustomCard, PageTitle, SinglePageTemplate } from '@/components';
 import { Checkbox, Divider, Flex, Image, Table, Text, Title } from '@mantine/core';
 
 import pageData from '@/data/pageData.json';
@@ -14,7 +14,8 @@ export default function About() {
   );
 
   return (
-    <SinglePageTemplate>
+    <SinglePageTemplate title="About the Project | Muum Codes">
+      <PageTitle>About the Project</PageTitle>
       {pageData.sections.map((section, index) => (
         <CustomCard key={index}>
           <Title
