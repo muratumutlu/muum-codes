@@ -99,14 +99,14 @@
     {
       "title": "Architecture of the Application",
       "image": {
-        "src": "https://private-user-images.githubusercontent.com/6642361/313503668-091e3395-b4b8-4107-baf6-89e4c794f5f4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTA3NzAxODYsIm5iZiI6MTcxMDc2OTg4NiwicGF0aCI6Ii82NjQyMzYxLzMxMzUwMzY2OC0wOTFlMzM5NS1iNGI4LTQxMDctYmFmNi04OWU0Yzc5NGY1ZjQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDMxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAzMThUMTM1MTI2WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NzQ1Mjc3Njc0NmZmMjk2YzJkNTI0NDAzMjI4ZDMzZTgyMTA0NTZlZTIyY2M3MzM3MWNhYjQxZDI2NWFhZmJiNyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.ELEylFZTLK4sr36otROyxoyq5bx7nrJR7oEBTVp7LjY",
+        "src": "/images/architecture.png",
         "alt": "Wireframe of the Application"
       }
     },
     {
       "title": "Wireframe of the Application",
       "image": {
-        "src": "https://private-user-images.githubusercontent.com/6642361/313503680-343ebb26-2b61-471d-8bbe-c091be6007f4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTA3NjM3NDQsIm5iZiI6MTcxMDc2MzQ0NCwicGF0aCI6Ii82NjQyMzYxLzMxMzUwMzY4MC0zNDNlYmIyNi0yYjYxLTQ3MWQtOGJiZS1jMDkxYmU2MDA3ZjQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDMxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAzMThUMTIwNDA0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWY5MzYwODE5NDgxN2E3ZDU3YTIxNGYwZjNmMjliMDM2YmFlMjY1OTk4YmJiNGYwMDFmYTg0YTYwNjFmMzJkNCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.gf-2z94AjXjcSK_9nF8RS2TXd1PBjlN2XiQemYNNB7k",
+        "src": "/images/wireframe.png",
         "alt": "Wireframe of the Application"
       }
     },

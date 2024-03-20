@@ -7,7 +7,7 @@ export const fetchGithubRepos = async (
   language: string,
   sortBy: SortBy,
   orderBy: OrderBy,
-  page = 1 // Add a page parameter with a default value
+  page = 1
 ) => {
   // If the searchTerm is undefined, we will use the language as the search term
   const queryString = encodeURIComponent(`${searchTerm} language:${language}`);
@@ -15,11 +15,6 @@ export const fetchGithubRepos = async (
   // Fetching the data from the GitHub API
   const response = await fetch(
     `${GITHUB_API_SEARCH_URL}?q=${queryString}&sort=${sortBy}&order=${orderBy}&page=${page}&per_page=${MAX_PAGE_ITEMS}`
-  );
-
-  console.log(
-    `${GITHUB_API_SEARCH_URL}?q=${queryString}&sort=${sortBy}&order=${orderBy}&page=${page}&per_page=${MAX_PAGE_ITEMS}`,
-    'URL'
   );
 
   // If the response is not ok, we will throw an error
