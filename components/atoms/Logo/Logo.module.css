@@ -1,10 +1,15 @@
 .link {
-  text-decoration: none;
-  font-size: 2rem;
+	text-decoration: none;
+	font-size: 2rem;
+
+	/* css code for mobile */
+	@media (max-width: 768px) {
+		font-size: 1rem;
+	}
 }
 
 .logo {
-  letter-spacing: -2;
-  padding-right: 20;
-  cursor: pointer;
+	letter-spacing: -2;
+	padding-right: 20;
+	cursor: pointer;
 }

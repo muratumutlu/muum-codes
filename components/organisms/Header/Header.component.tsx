@@ -1,8 +1,12 @@
 /* eslint-disable import/order */
 import { Logo, ThemeSwitcher } from "@/components";
-import { ActionIcon, Container, Group } from "@mantine/core";
+import { ActionIcon, Button, Container, Group, Menu, rem } from "@mantine/core";
 
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
+import {
+	IconBrandGithub,
+	IconBrandLinkedin,
+	IconQuestionMark,
+} from "@tabler/icons-react";
 import classes from "./Header.module.css";
 
 import router from "next/router";
@@ -20,7 +24,7 @@ export default function Header() {
 		<header className={classes.header}>
 			<Container size="xl" className={classes.inner}>
 				<Logo brand="🔍 Muum Codes" />
-				<Group>
+				<Group visibleFrom="md">
 					<ThemeSwitcher />
 					<ActionIcon
 						aria-label="Who am I?"
@@ -42,6 +46,41 @@ export default function Header() {
 					>
 						<IconBrandGithub />
 					</ActionIcon>
+				</Group>
+				<Group align="center" hiddenFrom="md">
+					<Menu shadow="md" width={200}>
+						<Menu.Target>
+							<Button radius="xl">
+								<IconQuestionMark />
+							</Button>
+						</Menu.Target>
+
+						<Menu.Dropdown>
+							<Menu.Item>
+								<ThemeSwitcher />
+							</Menu.Item>
+							<Menu.Item
+								onClick={handleLinkedinClick}
+								leftSection={
+									<IconBrandLinkedin
+										style={{ width: rem(14), height: rem(14) }}
+									/>
+								}
+							>
+								Linkedin
+							</Menu.Item>
+							<Menu.Item
+								onClick={handleGithubClick}
+								leftSection={
+									<IconBrandGithub
+										style={{ width: rem(14), height: rem(14) }}
+									/>
+								}
+							>
+								Github Repo
+							</Menu.Item>
+						</Menu.Dropdown>
+					</Menu>
 				</Group>
 			</Container>
 		</header>
