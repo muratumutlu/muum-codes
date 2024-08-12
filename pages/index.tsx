@@ -37,9 +37,6 @@ export default function HomePage() {
 				{searchTerm && (
 					<Title>{`Open Source ${searchTerm} projects ${language && `developed with ${language}`}`}</Title>
 				)}
-				{!searchTerm && (
-					<Title>{`Open Source AI projects developed with ${language}`}</Title>
-				)}
 			</CustomCard>
 
 			<CustomCard>

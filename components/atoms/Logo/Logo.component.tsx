@@ -1,26 +1,38 @@
-import { Stack, Text } from '@mantine/core';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
 
-import classes from './Logo.module.css';
+import { Skeleton, Stack, useMantineColorScheme } from "@mantine/core";
+import Image from "next/image";
+import Link from "next/link";
 
-interface logoProps {
-  brand: string;
+interface LogoProps {
+	onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
-export default function Logo({ brand }: logoProps) {
-  return (
-    <Link href="/" passHref className={classes.link}>
-      <Stack>
-        <Text
-          inherit
-          variant="gradient"
-          component="span"
-          gradient={{ from: 'pink', to: 'blue' }}
-          fw={900}
-        >
-          {brand}
-        </Text>
-      </Stack>
-    </Link>
-  );
+export default function Logo({ onClick }: LogoProps) {
+	const [logoSrc, setLogoSrc] = useState("");
+
+	const { colorScheme } = useMantineColorScheme();
+
+	useEffect(() => {
+		const newLogoSrc =
+			colorScheme === "dark" ? "/muum-dark-mode.png" : "/muum-light-mode.png";
+		setLogoSrc(newLogoSrc);
+	}, [colorScheme]);
+
+	if (!logoSrc) return <Skeleton height={44} width={107} />;
+
+	return (
+		<Link href="/" onClick={onClick} passHref>
+			<Stack>
+				<Image
+					src={logoSrc}
+					alt="Muum Codes"
+					width={107}
+					height={44}
+					title="Muum Codes"
+					priority
+				/>
+			</Stack>
+		</Link>
+	);
 }

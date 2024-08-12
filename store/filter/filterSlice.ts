@@ -35,7 +35,7 @@ export const filterSlice = createSlice({
 			state.totalPages = action.payload;
 		},
 		resetAll: (state) => {
-			state.language = "";
+			state.language = "javascript";
 			state.searchTerm = "";
 			state.sortBy = "lastUpdate";
 			state.orderBy = "desc";
