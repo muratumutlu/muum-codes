@@ -47,7 +47,7 @@ export default function HomePage() {
 				<Group gap={10}>
 					{predefinedSearchTerms.map((term) => (
 						<Button
-							variant="light"
+							variant={searchTerm === term.label ? "filled" : "outline"}
 							key={term.label}
 							onClick={() => handleSearchChange(term.label)}
 						>
@@ -56,7 +56,7 @@ export default function HomePage() {
 					))}
 				</Group>
 			</CustomCard>
-			<CustomCard>
+			<CustomCard cardTitle="You can specify your search by programming language:">
 				<Filter
 					options={githubLanguages}
 					onChange={handleFilterChange}

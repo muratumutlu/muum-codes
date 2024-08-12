@@ -13,7 +13,7 @@ function Hero() {
 					inherit
 					variant="gradient"
 					component="span"
-					gradient={{ from: "pink", to: "yellow" }}
+					gradient={{ from: "pink", to: "blue" }}
 				>
 					Codes!
 				</Text>

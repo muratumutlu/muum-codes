@@ -23,7 +23,7 @@ export default function Header() {
 	return (
 		<header className={classes.header}>
 			<Container size="xl" className={classes.inner}>
-				<Logo brand="🔍 Muum Codes" />
+				<Logo />
 				<Group visibleFrom="md">
 					<ThemeSwitcher />
 					<ActionIcon
