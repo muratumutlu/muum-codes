@@ -1,49 +1,57 @@
 .id {
-  width: 10%;
-  min-width: 80px;
-  border-top-left-radius: 8;
+	width: 10%;
+	min-width: 80px;
+	border-top-left-radius: 8;
 
-  @media (max-width: 768px) {
-    width: 35vw;
-  }
+	@media (max-width: 768px) {
+		width: 35vw;
+	}
 }
 
 .description {
-  width: 45%;
+	width: 45%;
 
-  @media (max-width: 768px) {
-    width: 45vw;
-  }
+	@media (max-width: 768px) {
+		width: 45vw;
+	}
 }
 
 .username {
-  width: 15%;
+	width: 15%;
 
-  @media (max-width: 768px) {
-    width: 45vw;
-  }
+	@media (max-width: 768px) {
+		width: 45vw;
+	}
 }
 
 .stars,
 .forks,
 .lastUpdate {
-  min-width: 80px;
-  width: 10%;
-  cursor: pointer;
+	min-width: 80px;
+	width: 10%;
+	cursor: pointer;
 
-  @media (max-width: 768px) {
-    width: 25vw;
-  }
+	@media (max-width: 768px) {
+		width: 25vw;
+	}
 }
 
 .lastUpdate {
-  border-top-right-radius: 8;
+	border-top-right-radius: 8;
+}
+
+.cardWrapper {
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	border: 1px solid #f6f6f60f;
+	box-shadow: 0px 0px 33px 9px rgba(0, 0, 0, 0.1);
 }
 
 .tableContainer {
-  overflow-x: auto;
+	overflow-x: auto;
 
-  @media (min-width: 768px) {
-    width: 100%;
-  }
+	@media (min-width: 768px) {
+		width: 100%;
+	}
 }
