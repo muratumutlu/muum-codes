@@ -138,7 +138,6 @@ const RepoTable: React.FC = () => {
 							striped
 							highlightOnHover
 							stickyHeader
-							verticalSpacing="sm"
 							withColumnBorders
 							captionSide="bottom"
 						>
