@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   const handleGithubClick = () => {
-    router.push('https://github.com/alimuratumutlu/muum-repo-explorer');
+    router.push('https://github.com/muratumutlu/muum-repo-explorer');
   };
 
   return (
