@@ -1,6 +1,7 @@
 import { GITHUB_API_SEARCH_URL } from '@/constants/apiURLs';
 import { MAX_PAGE_ITEMS } from '@/constants/magicNumbers';
 import { OrderBy, SearchTerm, SortBy } from '@/types/Filter.types';
+import type { GithubRepository } from '@/types/GithubRepo.types';
 
 export const fetchGithubRepos = async (
   searchTerm: SearchTerm,
@@ -29,7 +30,7 @@ export const fetchGithubRepos = async (
   const totalPages = Math.ceil(totalItems / MAX_PAGE_ITEMS);
 
   return {
-    items: json.items, // The array of repository objects
+    items: json.items as GithubRepository[], // The array of repository objects
     totalPages, // The total page count of repositories matching the search criteria
   };
 };

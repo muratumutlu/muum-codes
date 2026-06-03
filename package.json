@@ -12,6 +12,9 @@
 		"build:web": "next build",
 		"build:mac": "npm run build:web && electron-builder --mac --publish never",
 		"deploy:cloudflare": "npm run build:web && wrangler pages deploy out --project-name muum-repo-explorer",
+		"dev:cloudflare": "npm run build:web && wrangler pages dev out --d1=DB --r2=REPO_BUCKET",
+		"db:migrate:local": "wrangler d1 migrations apply muum-repo-explorer --local",
+		"db:migrate:remote": "wrangler d1 migrations apply muum-repo-explorer --remote",
 		"analyze": "ANALYZE=true next build",
 		"start": "next start",
 		"export": "next build",
@@ -46,6 +49,7 @@
 		}
 	},
 	"dependencies": {
+		"@clerk/nextjs": "^6.12.8",
 		"@mantine/core": "7.6.1",
 		"@mantine/hooks": "7.6.1",
 		"@next/bundle-analyzer": "^14.1.3",

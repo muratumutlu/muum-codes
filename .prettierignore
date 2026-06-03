@@ -1,0 +1,6 @@
+.next
+.wrangler
+coverage
+dist
+node_modules
+out
