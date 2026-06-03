@@ -13,13 +13,13 @@ const MetaTags: React.FC<MetaTagsProps> = ({
   keywords,
 }) => {
   const defaultTitles = {
-    homepage: 'Muum Repo Explorer | Open-source repository intelligence',
+    homepage: 'Muum Repo Explorer | Repo intelligence for AI-native developers',
     singlePage: 'About | Muum Repo Explorer',
   };
 
   const defaultDescriptions = {
     homepage:
-      'Muum Repo Explorer helps developers discover, compare, and triage open-source repositories across the web and macOS.',
+      'Muum Repo Explorer helps AI-native developers discover, save, and triage open-source repositories from one private workspace.',
     singlePage:
       'Muum Repo Explorer is an open-source repository discovery and maintenance triage tool for web and macOS.',
   };

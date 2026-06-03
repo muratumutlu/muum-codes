@@ -1,6 +1,8 @@
 /* eslint-disable import/order */
 import { Header } from '@/components';
 import { persistor, store } from '@/store';
+import { clerkPublishableKey, isClerkConfigured } from '@/utils/auth';
+import { ClerkProvider } from '@clerk/nextjs';
 import { AppShell, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import {
@@ -17,7 +19,7 @@ import { theme } from '../theme';
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
-  return (
+  const app = (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <QueryClientProvider client={queryClient}>
@@ -34,5 +36,16 @@ export default function App({ Component, pageProps }: AppProps) {
         </QueryClientProvider>
       </PersistGate>
     </ReduxProvider>
+  );
+
+  if (!isClerkConfigured) return app;
+
+  return (
+    <ClerkProvider
+      publishableKey={clerkPublishableKey as string}
+      {...pageProps}
+    >
+      {app}
+    </ClerkProvider>
   );
 }

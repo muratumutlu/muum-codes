@@ -1,0 +1,90 @@
+.console {
+  position: relative;
+  overflow: hidden;
+  margin: rem(12px) 0 rem(18px);
+  padding: rem(26px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border-radius: rem(8px);
+  background: linear-gradient(
+      90deg,
+      light-dark(#f8f3df, #15130f),
+      transparent 64%
+    ),
+    repeating-linear-gradient(
+      -12deg,
+      transparent 0,
+      transparent rem(18px),
+      light-dark(rgba(250, 112, 90, 0.16), rgba(250, 112, 90, 0.11)) rem(18px),
+      light-dark(rgba(250, 112, 90, 0.16), rgba(250, 112, 90, 0.11)) rem(19px)
+    );
+}
+
+.console::after {
+  content: '';
+  position: absolute;
+  right: rem(22px);
+  bottom: rem(20px);
+  width: rem(120px);
+  height: rem(120px);
+  border: rem(1px) dashed light-dark(#17130d, rgba(248, 245, 231, 0.22));
+  opacity: 0.2;
+  transform: rotate(-12deg);
+}
+
+.eyebrow,
+.label {
+  color: light-dark(#5f3b00, #ffd166);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.consoleTitle {
+  max-width: rem(720px);
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: clamp(2rem, 4vw, 4.3rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.consoleCopy {
+  max-width: rem(360px);
+  color: light-dark(#4c463a, #c9c2aa);
+  font-size: rem(15px);
+  line-height: 1.6;
+}
+
+.label {
+  display: block;
+  margin-bottom: rem(10px);
+}
+
+.topicButton {
+  height: rem(36px);
+  border-radius: rem(4px);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+  letter-spacing: 0;
+}
+
+.resultsTitle {
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .console {
+    padding: rem(18px);
+  }
+
+  .consoleCopy {
+    max-width: 100%;
+  }
+}

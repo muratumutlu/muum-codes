@@ -18,13 +18,56 @@ The repository includes a direct-upload workflow with Wrangler. It requires thes
 
 `muum.dev` is already using Cloudflare nameservers. After the Pages project exists, add `muum.dev` as a custom domain in the Cloudflare Pages project. Cloudflare should then create or guide the required DNS record.
 
-## Future Product Architecture
+## Workspace Architecture
 
-Use storage only when product features require it:
+The first persisted workflow is saved repositories:
 
-- D1: saved repository lists, user workspaces, triage state, issue classifications, release-note drafts.
-- R2: exported reports, repository snapshots, generated assets, long-lived files.
-- Clerk: authentication and organization membership for private saved workspaces.
-- Workers or Pages Functions: authenticated API routes, GitHub API proxying, rate-limit handling, and future AI workflows.
+- Clerk: client sign-in and session tokens.
+- Pages Functions: authenticated workspace API.
+- D1: saved repository records keyed by Clerk user ID.
+- R2: repository snapshot JSON for long-lived export and later analysis workflows.
 
-Do not add D1/R2 bindings before the first feature needs persisted server-side data. The current public search experience can remain static and client-side.
+## Cloudflare Setup
+
+The repository now declares the D1 and R2 bindings in `wrangler.toml`:
+
+- D1 binding: `DB`
+- D1 database name: `muum-repo-explorer`
+- R2 binding: `REPO_BUCKET`
+- R2 bucket name: `muum-repo-explorer-repo-snapshots`
+
+Apply migrations locally:
+
+```bash
+npm run db:migrate:local
+```
+
+Apply migrations remotely after the Cloudflare account resources exist:
+
+```bash
+npm run db:migrate:remote
+```
+
+Run the Pages Functions target locally:
+
+```bash
+npm run dev:cloudflare
+```
+
+## Clerk Setup
+
+Set the publishable key for the Next.js build:
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_or_pk_live
+```
+
+Set these runtime values for Pages Functions in Cloudflare Pages environment variables or `.dev.vars` for local Wrangler runs:
+
+```bash
+CLERK_JWKS_URL=https://your-clerk-domain/.well-known/jwks.json
+CLERK_JWT_ISSUER=https://your-clerk-domain
+CLERK_JWT_AUDIENCE=
+```
+
+`CLERK_JWT_AUDIENCE` is optional. Leave it unset unless the Clerk JWT template uses an audience claim.

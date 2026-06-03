@@ -1,10 +1,150 @@
-.title {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  font-size: rem(100px);
-  font-weight: 900;
-  letter-spacing: rem(-2px);
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: rem(64px) 0 rem(34px);
+}
 
-  @media (max-width: --mantine-breakpoint-md) {
-    font-size: rem(50px);
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: rem(18px) auto auto rem(-44px);
+  width: rem(180px);
+  height: rem(180px);
+  border: rem(1px) solid light-dark(#111, #f4f0de);
+  opacity: 0.08;
+  transform: rotate(18deg);
+}
+
+.badge {
+  border-color: light-dark(#111, #f4f0de);
+  color: light-dark(#111, #f4f0de);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+}
+
+.badgeMuted {
+  color: light-dark(#24584f, #9ae6b4);
+  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.12));
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+}
+
+.title {
+  max-width: rem(640px);
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: clamp(3rem, 8vw, 6.9rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: 0;
+}
+
+.description {
+  max-width: rem(610px);
+  color: light-dark(#433f39, #c9c2aa);
+  font-size: rem(19px);
+  line-height: 1.6;
+}
+
+.signalStrip {
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(13px);
+}
+
+.signalStrip span {
+  padding: rem(8px) rem(12px);
+  border: rem(1px) solid light-dark(#12100d, rgba(248, 245, 231, 0.2));
+  border-radius: rem(4px);
+  background: light-dark(#f7f2df, rgba(248, 245, 231, 0.05));
+}
+
+.visualPanel {
+  position: relative;
+  overflow: hidden;
+  padding: rem(14px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.18));
+  border-radius: rem(8px);
+  background: linear-gradient(
+      135deg,
+      light-dark(#fffdf4, #151410),
+      transparent 58%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) 0,
+      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+  box-shadow: rem(12px) rem(12px) 0 light-dark(#12100d, #9ae6b4);
+}
+
+.visualHeader,
+.signalGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(8px);
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+  text-transform: uppercase;
+}
+
+.imageFrame {
+  position: relative;
+  height: rem(330px);
+  margin: rem(12px) 0;
+  overflow: hidden;
+  border: rem(1px) solid light-dark(#12100d, rgba(248, 245, 231, 0.22));
+  border-radius: rem(6px);
+  background: #fffdf4;
+}
+
+.architectureImage {
+  object-fit: cover;
+  object-position: 50% 48%;
+  filter: saturate(0.82) contrast(1.1);
+}
+
+.signalGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.signalGrid span {
+  min-height: rem(46px);
+  padding: rem(8px);
+  border-left: rem(1px) solid light-dark(#12100d, rgba(248, 245, 231, 0.18));
+  color: light-dark(#29241b, #d8d1b9);
+}
+
+.signalGrid span:first-child {
+  border-left: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: rem(38px);
+  }
+
+  .description {
+    font-size: rem(16px);
+  }
+
+  .visualPanel {
+    box-shadow: rem(7px) rem(7px) 0 light-dark(#12100d, #9ae6b4);
+  }
+
+  .imageFrame {
+    height: rem(230px);
+  }
+
+  .signalGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .signalGrid span:nth-child(3) {
+    border-left: 0;
   }
 }

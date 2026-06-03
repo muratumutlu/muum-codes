@@ -2,7 +2,23 @@
   width: 100%;
   border-radius: 0.5rem;
   font-size: 1rem;
-  color: #333;
   outline: none;
   transition: border-color 0.2s ease-in-out;
+}
+
+.input label {
+  color: light-dark(#12100d, #f8f5e7);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.input input {
+  min-height: rem(54px);
+  border: rem(1px) solid light-dark(#12100d, rgba(248, 245, 231, 0.22));
+  border-radius: rem(6px);
+  background: light-dark(#fffdf4, rgba(248, 245, 231, 0.05));
+  font-size: rem(18px);
 }

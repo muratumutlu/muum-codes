@@ -13,9 +13,9 @@ export default function SearchInput({ value, onChange }: SearchInputProps) {
 
   return (
     <TextInput
-      label="Search for a repository"
-      description="Type repository name or any topic and select language to filter results"
-      placeholder="Term, topic, or repo name"
+      label="Open-source scan"
+      description="Type a topic, repo name, agent workflow, or infrastructure layer"
+      placeholder="agent runtime, code review, vector database..."
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       value={value}

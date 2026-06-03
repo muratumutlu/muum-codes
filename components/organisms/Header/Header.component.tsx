@@ -1,5 +1,5 @@
 /* eslint-disable import/order */
-import { Logo, ThemeSwitcher } from '@/components';
+import { AuthControls, Logo, ThemeSwitcher } from '@/components';
 import { ActionIcon, Button, Container, Group, Menu, rem } from '@mantine/core';
 
 import {
@@ -25,6 +25,7 @@ export default function Header() {
       <Container size="xl" className={classes.inner}>
         <Logo />
         <Group visibleFrom="md">
+          <AuthControls />
           <ThemeSwitcher />
           <ActionIcon
             aria-label="Who am I?"
@@ -48,6 +49,7 @@ export default function Header() {
           </ActionIcon>
         </Group>
         <Group align="center" hiddenFrom="md">
+          <AuthControls compact />
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <Button radius="xl">

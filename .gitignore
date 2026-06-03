@@ -57,6 +57,7 @@ web_modules/
 
 # Optional stylelint cache
 .stylelintcache
+.playwright-mcp/
 
 # Microbundle cache
 .rpt2_cache/
@@ -87,6 +88,7 @@ web_modules/
 # Next.js build output
 .next
 out
+.wrangler
 
 # Nuxt.js build / generate output
 .nuxt

@@ -1,6 +1,7 @@
 /* eslint-disable import/order */
 import React from 'react';
 
+import type { GithubRepository } from '@/types/GithubRepo.types';
 import { useGithubData } from '@/hooks';
 import {
   Avatar,
@@ -30,7 +31,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './RepoTable.module.css';
 
-import { CustomCard } from '@/components';
+import { CustomCard, SaveRepositoryButton } from '@/components';
 import type { SortBy } from '@/types/Filter.types';
 
 const RepoTable: React.FC = () => {
@@ -46,7 +47,7 @@ const RepoTable: React.FC = () => {
     currentPage,
   );
 
-  const handleRepoClick = (repo: any) => {
+  const handleRepoClick = (repo: string) => {
     window.open(repo, '_blank');
   };
 
@@ -69,12 +70,15 @@ const RepoTable: React.FC = () => {
     return orderBy === 'asc' ? <IconArrowNarrowUp /> : <IconArrowNarrowDown />;
   };
 
-  const rows = items?.map((repo: any) => (
+  const rows = items?.map((repo: GithubRepository) => (
     <Table.Tr
       key={repo.id}
-      onClick={() => handleRepoClick(repo.svn_url)}
+      onClick={() => handleRepoClick(repo.html_url ?? repo.svn_url ?? '')}
       style={{ cursor: 'pointer' }}
     >
+      <Table.Td className={classes.action}>
+        <SaveRepositoryButton repo={repo} />
+      </Table.Td>
       <Table.Td className={classes.id}>
         <Text>{repo.id}</Text>
       </Table.Td>
@@ -104,6 +108,9 @@ const RepoTable: React.FC = () => {
 
   const rowsSkeleton = Array.from({ length: 20 }).map((_, index) => (
     <Table.Tr key={index} style={{ width: '100%' }}>
+      <Table.Td>
+        <Skeleton height={30} width="40%" />
+      </Table.Td>
       <Table.Td>
         <Skeleton height={30} width="90%" />
       </Table.Td>
@@ -143,6 +150,7 @@ const RepoTable: React.FC = () => {
             >
               <Table.Thead>
                 <Table.Tr>
+                  <Table.Th className={classes.action}>Save</Table.Th>
                   <Table.Th className={classes.id}>ID</Table.Th>
                   <Table.Th className={classes.username}>Username</Table.Th>
                   <Table.Th className={classes.description}>
@@ -175,7 +183,7 @@ const RepoTable: React.FC = () => {
                 </Table.Tr>
               </Table.Thead>
               {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
-              {!isLoading && items?.length > 0 && (
+              {!isLoading && (items?.length ?? 0) > 0 && (
                 <Table.Tbody>{rows}</Table.Tbody>
               )}
               <Table.Caption>

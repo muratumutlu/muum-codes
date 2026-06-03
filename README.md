@@ -22,6 +22,8 @@ The project is intentionally available as both:
 - Sort results by stars, forks, and last update.
 - Browse paginated repository results.
 - Open repositories directly from the results table.
+- Sign in with Clerk and save repositories to a private workspace.
+- Store saved repository records in Cloudflare D1 and repository snapshots in R2.
 - Run as a static web app or packaged Electron macOS app.
 
 ## Roadmap
@@ -65,6 +67,13 @@ Build the static web app:
 npm run build:web
 ```
 
+Run the Cloudflare Pages Functions build locally:
+
+```bash
+npm run db:migrate:local
+npm run dev:cloudflare
+```
+
 Build the macOS app:
 
 ```bash
@@ -92,7 +101,11 @@ See [docs/cloudflare-plan.md](docs/cloudflare-plan.md) for the Cloudflare Pages,
 - Next.js
 - TypeScript
 - Mantine UI
+- Clerk
 - Redux Toolkit
 - TanStack Query
+- Cloudflare Pages Functions
+- Cloudflare D1
+- Cloudflare R2
 - Electron
 - electron-builder
