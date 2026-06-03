@@ -1,81 +1,98 @@
-# Github Repo Directory Project
+# Muum Repo Explorer
 
-## Managing the Project with SDLC
+Muum Repo Explorer is an open-source repository discovery and maintenance triage tool for web and macOS.
 
-While creating that project we wil use SDLC steps to create a managable and scalable project. Let's start
+The current app helps developers search GitHub repositories by topic and language, sort by activity signals, and open repository records quickly. The long-term direction is a lightweight maintainer workspace: discover relevant projects, compare repository health, triage issues, and prepare review or release work with AI-assisted workflows.
 
-## 1 - Requirements Gathering & Analysis
+Website: [muum.dev](https://muum.dev)
 
-- [x] Identifying the project's scope.
-- [x] Gathering requirements for the UI toolkit based on project needs (performance, customization, ease of use).
-- [x] Researching potential users' needs and preferences regarding UI/UX.
-- [x] Creating github issues for each requirements
+## Why This Project Exists
 
-## 2 - Design
+Open-source maintainers spend a large amount of time on repetitive project work: finding related repositories, checking activity, comparing ecosystems, classifying issues, reviewing pull requests, and preparing release notes. Muum Repo Explorer starts with repository search and is being shaped into a practical maintenance surface for those workflows.
 
-- [x] Comparing the possible UI toolkits and libraries based on the requirements based on Customizability, Performance, Community support and documentation
-- [x] Finalizing the choice of UI toolkit.
-- [x] Designing the application architecture.
-- [x] Creating wireframes and mockups.
+The project is intentionally available as both:
 
-### UI Toolkit Comparison: Mantinw UI, Material UI, and Chakra UI
+- A web app for quick public access.
+- A macOS app for maintainers who want a local desktop workspace.
 
-The comparison aims to assist in making an informed decision on the most suitable UI framework for our development needs.
+## Current Features
 
-| Feature/Criteria          | Mantine UI                                  | Material UI                                         | Chakra UI                                           |
-| ------------------------- | ------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| **Customization**         | High customization with less effort.        | Extensive customization but can be more complex.    | Easy and flexible customization.                    |
-| **Performance**           | Optimized for speed and efficiency.         | Good, but can be heavy for complex applications.    | Balanced performance, good for dynamic UIs.         |
-| **Ease of Use**           | Simple API and easy to learn.               | Steep learning curve due to comprehensive features. | Intuitive API, easy to use and learn.               |
-| **Community Support**     | Growing community, responsive support.      | Large community, extensive resources and support.   | Strong community, good documentation and support.   |
-| **Documentation**         | Well-documented with examples.              | Extensive and detailed documentation.               | Comprehensive documentation with examples.          |
-| **Accessibility**         | Focus on accessibility with ARIA support.   | Strong emphasis on accessibility.                   | Good accessibility features and best practices.     |
-| **Mobile Responsiveness** | Fully responsive components.                | Responsive design is a core feature.                | Responsive components with mobile-first approach.   |
-| **Popularity**            | Increasing popularity, newer in the market. | Most popular, widely adopted.                       | Rapidly gaining popularity.                         |
-| **Unique Features**       | Lightweight, modern UI, less boilerplate.   | Material Design principles, rich components.        | Easy theming, focus on composition and flexibility. |
+- Search GitHub repositories by topic or custom term.
+- Filter results by programming language.
+- Sort results by stars, forks, and last update.
+- Browse paginated repository results.
+- Open repositories directly from the results table.
+- Run as a static web app or packaged Electron macOS app.
 
-### UI Toolkit Decision
+## Roadmap
 
-- **Mantine UI** offers a balance between customization, ease of use, and performance, making it a strong candidate for projects prioritizing developer experience and speed.
-- **Material UI** is suited for applications that benefit from Material Design and require a comprehensive suite of components.
-- **Chakra UI** is ideal for projects that emphasize accessibility, simplicity, and ease of theming.
+- Improve GitHub API error, empty, and rate-limit states.
+- Add repository health signals such as open issues, recent releases, maintainer activity, and license.
+- Add saved research lists for maintainers comparing ecosystems.
+- Add issue and pull request triage views.
+- Add Codex-assisted summaries for project health, issue queues, and release preparation.
+- Add signed and notarized macOS releases.
+- Harden dependency security and add audit coverage to CI.
 
-As I am the only developer in the current project, I will choose the one which can be learned easily. So that after inspecting its Table component and other ready-to-go custom hooks, **Mantine UI** will be my choice.
+## Codex for Open Source Fit
 
-### Architecture of the Application
+The project is being prepared for real open-source maintenance workflows. Codex and API credits would be used to:
 
-![Ekran Resmi 2024-03-17 23 27 23](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/091e3395-b4b8-4107-baf6-89e4c794f5f4)
+- Summarize repository health and maintenance risk from public GitHub signals.
+- Classify issues and pull requests into actionable maintenance buckets.
+- Draft release notes and maintainer handoff summaries.
+- Build security and code-quality checks into the maintainer workflow.
+- Accelerate implementation of the macOS and web app surfaces.
 
-![Ekran Resmi 2024-03-17 23 27 23](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/091e3395-b4b8-4107-baf6-89e4c794f5f4)
+This is not positioned as a generic GitHub search clone. The goal is a focused tool for maintainers who need to understand and act on open-source repository activity faster.
 
-### Wireframe of the Application
+## Development
 
-![Ekran Resmi 2024-03-17 23 27 34](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/343ebb26-2b61-471d-8bbe-c091be6007f4)
+```bash
+npm ci
+npm run dev
+```
 
-![Ekran Resmi 2024-03-17 23 27 34](https://github.com/alimuratumutlu/intenseye-task/assets/6642361/343ebb26-2b61-471d-8bbe-c091be6007f4)
+Run the full local quality suite:
 
-## 3 - Implementation
+```bash
+npm test
+```
 
-- [x] Set upping the project repository.
-- [x] Configuring Next.js, TypeScript and the chosen libraries
-- [x] Implementing the frontend features according to the design mockups.
-- [x] Implementing the responsiveness.
+Build the static web app:
 
-## 4 - Testing
+```bash
+npm run build:web
+```
 
-- [ ] Unit test individual components and services.
-- [ ] Integration test the combined parts of the application.
-- [ ] Perform user acceptance testing to ensure the app meets requirements.
+Build the macOS app:
 
-## 5 - Deployment
+```bash
+npm run build:mac
+```
 
-- [x] Set upping CI/CD pipelines.
-- [x] Deploy the application to a staging environment.
-- [x] Conducting final pre-launch checks.
-- [x] Deploying the application to production.
+The macOS build outputs DMG and ZIP artifacts under `dist/macos`.
 
-## 6 - Maintenance
+Deploy the static web app to Cloudflare Pages:
 
-- [ ] Monitoring the application for issues.
-- [ ] Updating dependencies and the UI toolkit as needed.
-- [ ] Continuously improving the application based on user feedbacks.
+```bash
+npm run deploy:cloudflare
+```
+
+## CI
+
+The GitHub Actions workflow in `.github/workflows/macos-app.yml` installs dependencies with `npm ci`, runs the test suite, builds the macOS app, and uploads the generated DMG/ZIP artifacts.
+
+The workflow in `.github/workflows/cloudflare-pages.yml` builds the static web app and deploys `out/` to Cloudflare Pages. It requires `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets.
+
+See [docs/cloudflare-plan.md](docs/cloudflare-plan.md) for the Cloudflare Pages, D1, R2, and Clerk plan.
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- Mantine UI
+- Redux Toolkit
+- TanStack Query
+- Electron
+- electron-builder

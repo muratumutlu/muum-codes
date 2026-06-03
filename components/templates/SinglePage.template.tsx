@@ -7,7 +7,10 @@ interface SinglePageTemplateProps {
   title: string;
 }
 
-export default function HomeTemplate({ children, title }: SinglePageTemplateProps) {
+export default function HomeTemplate({
+  children,
+  title,
+}: SinglePageTemplateProps) {
   return (
     <>
       <MetaTags type="singlePage" title={title} />

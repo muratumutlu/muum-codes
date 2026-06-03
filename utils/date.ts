@@ -1,4 +1,7 @@
-export const beautifyDate = (dateString: string | null = null, withDay = false) => {
+export const beautifyDate = (
+  dateString: string | null = null,
+  withDay = false,
+) => {
   if (dateString === null) return 'No Valid Date Provided';
 
   const date = new Date(dateString);

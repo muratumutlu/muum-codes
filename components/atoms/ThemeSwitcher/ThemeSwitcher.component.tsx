@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { Skeleton, Switch, useMantineColorScheme, useMantineTheme } from '@mantine/core';
+import {
+  Skeleton,
+  Switch,
+  useMantineColorScheme,
+  useMantineTheme,
+} from '@mantine/core';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 
 import classes from './ThemeSwitcher.module.css';
@@ -14,7 +19,9 @@ export default function ThemeSwitcher() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('theme');
-      const isDarkMode = storedTheme ? storedTheme === 'dark' : colorScheme === 'dark';
+      const isDarkMode = storedTheme
+        ? storedTheme === 'dark'
+        : colorScheme === 'dark';
       setChecked(isDarkMode);
       setLoading(false); // Setting loading to false after determining the theme
 
@@ -36,12 +43,22 @@ export default function ThemeSwitcher() {
         }
       }, 150);
     },
-    [setColorScheme]
+    [setColorScheme],
   );
 
-  const sunIcon = <IconSun className={classes.icon} stroke={2.5} color={theme.colors.yellow[8]} />;
+  const sunIcon = (
+    <IconSun
+      className={classes.icon}
+      stroke={2.5}
+      color={theme.colors.yellow[8]}
+    />
+  );
   const moonIcon = (
-    <IconMoonStars className={classes.icon} stroke={1.5} color={theme.colors.gray[0]} />
+    <IconMoonStars
+      className={classes.icon}
+      stroke={1.5}
+      color={theme.colors.gray[0]}
+    />
   );
 
   // Rendering a placeholder until loading is complete

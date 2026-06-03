@@ -1,7 +1,6 @@
 /* eslint-disable import/order */
-// pages/github-repo-directory.js or a similar path
 import { CustomCard, PageTitle, SinglePageTemplate } from '@/components';
-import { Checkbox, Divider, Flex, Image, Table, Text, Title } from '@mantine/core';
+import { Checkbox, Divider, Flex, Image, Text, Title } from '@mantine/core';
 
 import pageData from '@/data/pageData.json';
 
@@ -14,7 +13,7 @@ export default function About() {
   );
 
   return (
-    <SinglePageTemplate title="About the Project | Muum Codes">
+    <SinglePageTemplate title="About the Project | Muum Repo Explorer">
       <PageTitle>About the Project</PageTitle>
       {pageData.sections.map((section, index) => (
         <CustomCard key={index}>
@@ -30,36 +29,6 @@ export default function About() {
             section.checklistItems.map((item, itemIndex) => (
               <ChecklistItem key={itemIndex}>{item}</ChecklistItem>
             ))}
-          {section.table && (
-            <Table>
-              <Table.Thead>
-                <Table.Tr>
-                  {section.table.headers.map((header, headerIndex) => (
-                    <Table.Th key={headerIndex}>{header}</Table.Th>
-                  ))}
-                </Table.Tr>
-              </Table.Thead>
-              <Table.Tbody>
-                {section.table.rows.map((row, rowIndex) => (
-                  <Table.Tr key={rowIndex}>
-                    <Table.Td>
-                      <Text fw={700}>{row.criteria}</Text>
-                    </Table.Td>
-                    <Table.Td>{row['Mantine UI']}</Table.Td>
-                    <Table.Td>{row['Material UI']}</Table.Td>
-                    <Table.Td>{row['Chakra UI']}</Table.Td>
-                  </Table.Tr>
-                ))}
-              </Table.Tbody>
-            </Table>
-          )}
-          {section.decisions &&
-            section.decisions.map((decision, decisionIndex) => (
-              <Flex key={decisionIndex} my="sm">
-                <Text fw={700}>{decision.name}</Text>: <Text ml="sm">{decision.description}</Text>
-              </Flex>
-            ))}
-          {section.conclusion && <Text my="md">{section.conclusion}</Text>}
           {section.image && (
             <Image
               src={section.image.src}
