@@ -1,23 +1,51 @@
 import {
   ActionIcon,
+  Anchor,
+  Badge,
+  Box,
   Container,
   Divider,
   Grid,
   Group,
+  SimpleGrid,
+  Stack,
   Text,
   Title,
   rem,
 } from '@mantine/core';
 
 import {
+  IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandX,
+  IconDatabase,
+  IconGitPullRequest,
+  IconRadar2,
 } from '@tabler/icons-react';
 
+import ThemeSwitcher from '../../atoms/ThemeSwitcher/ThemeSwitcher.component';
 import classes from './Footer.module.css';
 
 export default function Footer() {
+  const footerSignals = [
+    {
+      icon: IconRadar2,
+      label: 'Scout',
+      description: 'Search AI, infra, and maintainer ecosystems fast.',
+    },
+    {
+      icon: IconDatabase,
+      label: 'Remember',
+      description: 'Persist saved repositories with Clerk, D1, and R2.',
+    },
+    {
+      icon: IconGitPullRequest,
+      label: 'Triage',
+      description: 'Prepare the context future agents need to act.',
+    },
+  ];
+
   const handleTwitterClick = () => {
     window.open('https://twitter.com/alimuratumutlu', '_blank');
   };
@@ -29,43 +57,84 @@ export default function Footer() {
     window.open('https://instagram.com/alimuratumutlu', '_blank');
   };
 
+  const handleGithubClick = () => {
+    window.open('https://github.com/muratumutlu/muum-repo-explorer', '_blank');
+  };
+
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner} size="xl" px="md">
+      <Container size="xl" px="md">
         <Grid className={classes.groups}>
-          <Grid.Col span={{ base: 12, md: 12, lg: 12 }}>
-            <Title variant="gradient" fw={900}>
-              Muum Repo Explorer
+          <Grid.Col span={{ base: 12, md: 5 }}>
+            <Badge className={classes.badge}>For AI-native maintainers</Badge>
+            <Title className={classes.title}>
+              Open-source memory for builders who move with agents.
             </Title>
-            <Text c="dimmed" size="md" className={classes.description}>
-              Muum Repo Explorer is built by Muum Dev for open-source
-              maintainers and developers. It helps teams search, compare, and
-              triage repositories from a web or macOS workspace.
+            <Text className={classes.description}>
+              Muum Repo Explorer is a focused workspace for discovering, saving,
+              and preparing repository context before the next AI development
+              pass.
             </Text>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 7 }}>
+            <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md">
+              {footerSignals.map((signal) => {
+                const Icon = signal.icon;
+                return (
+                  <Box className={classes.signal} key={signal.label}>
+                    <Icon size={22} />
+                    <Text fw={800}>{signal.label}</Text>
+                    <Text size="sm">{signal.description}</Text>
+                  </Box>
+                );
+              })}
+            </SimpleGrid>
           </Grid.Col>
         </Grid>
       </Container>
-      <Container className={classes.inner} size="xl" px="md">
-        <Divider mb="xl" />
+
+      <Container size="xl" px="md">
+        <Divider className={classes.divider} />
       </Container>
+
       <Container className={classes.inner} size="xl" px="md">
-        <Text c="dimmed" size="sm">
-          © 2024{' '}
-          <a href="https://muum.dev" className={classes.link}>
-            Muum Dev
-          </a>
-        </Text>
+        <Stack gap={2}>
+          <Text className={classes.kicker}>Muum Repo Explorer</Text>
+          <Text c="dimmed" size="sm">
+            © 2026{' '}
+            <Anchor href="https://muum.dev" className={classes.link}>
+              Muum Dev
+            </Anchor>
+          </Text>
+        </Stack>
         <Group
-          gap={0}
+          gap="xs"
           className={classes.social}
           justify="flex-end"
-          wrap="nowrap"
+          wrap="wrap"
         >
+          <Box className={classes.themeControl}>
+            <Text className={classes.themeLabel}>Theme</Text>
+            <ThemeSwitcher />
+          </Box>
           <ActionIcon
             size="lg"
-            color="gray"
-            variant="subtle"
+            variant="outline"
+            aria-label="GitHub repository"
+            onClick={handleGithubClick}
+            className={classes.socialButton}
+          >
+            <IconBrandGithub
+              style={{ width: rem(18), height: rem(18) }}
+              stroke={1.5}
+            />
+          </ActionIcon>
+          <ActionIcon
+            size="lg"
+            variant="outline"
+            aria-label="X profile"
             onClick={handleTwitterClick}
+            className={classes.socialButton}
           >
             <IconBrandX
               style={{ width: rem(18), height: rem(18) }}
@@ -74,9 +143,10 @@ export default function Footer() {
           </ActionIcon>
           <ActionIcon
             size="lg"
-            color="gray"
-            variant="subtle"
+            variant="outline"
+            aria-label="LinkedIn profile"
             onClick={handleLinkedinClick}
+            className={classes.socialButton}
           >
             <IconBrandLinkedin
               style={{ width: rem(18), height: rem(18) }}
@@ -85,9 +155,10 @@ export default function Footer() {
           </ActionIcon>
           <ActionIcon
             size="lg"
-            color="gray"
-            variant="subtle"
+            variant="outline"
+            aria-label="Instagram profile"
             onClick={handleInstagramClick}
+            className={classes.socialButton}
           >
             <IconBrandInstagram
               style={{ width: rem(18), height: rem(18) }}

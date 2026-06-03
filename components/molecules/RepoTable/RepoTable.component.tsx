@@ -74,15 +74,15 @@ const RepoTable: React.FC = () => {
     <Table.Tr
       key={repo.id}
       onClick={() => handleRepoClick(repo.html_url ?? repo.svn_url ?? '')}
-      style={{ cursor: 'pointer' }}
+      className={classes.row}
     >
-      <Table.Td className={classes.action}>
+      <Table.Td className={`${classes.action} ${classes.cell}`}>
         <SaveRepositoryButton repo={repo} />
       </Table.Td>
-      <Table.Td className={classes.id}>
+      <Table.Td className={`${classes.id} ${classes.cell}`}>
         <Text>{repo.id}</Text>
       </Table.Td>
-      <Table.Td className={classes.username}>
+      <Table.Td className={`${classes.username} ${classes.cell}`}>
         <Flex justify="start" align="center">
           <Avatar
             src={repo.owner?.avatar_url}
@@ -97,10 +97,16 @@ const RepoTable: React.FC = () => {
         </Flex>
       </Table.Td>
 
-      <Table.Td className={classes.description}>{repo.description}</Table.Td>
-      <Table.Td className={classes.stars}>{repo.stargazers_count}</Table.Td>
-      <Table.Td className={classes.forks}>{repo.forks}</Table.Td>
-      <Table.Td className={classes.lastUpdate}>
+      <Table.Td className={`${classes.description} ${classes.cell}`}>
+        {repo.description}
+      </Table.Td>
+      <Table.Td className={`${classes.stars} ${classes.cell}`}>
+        {repo.stargazers_count}
+      </Table.Td>
+      <Table.Td className={`${classes.forks} ${classes.cell}`}>
+        {repo.forks}
+      </Table.Td>
+      <Table.Td className={`${classes.lastUpdate} ${classes.cell}`}>
         {beautifyDate(repo.updated_at)}
       </Table.Td>
     </Table.Tr>
@@ -142,41 +148,54 @@ const RepoTable: React.FC = () => {
         <CustomCard>
           <div className={classes.tableContainer}>
             <Table
+              className={classes.table}
               striped
               highlightOnHover
               stickyHeader
               withColumnBorders
               captionSide="bottom"
             >
-              <Table.Thead>
+              <Table.Thead className={classes.tableHead}>
                 <Table.Tr>
-                  <Table.Th className={classes.action}>Save</Table.Th>
-                  <Table.Th className={classes.id}>ID</Table.Th>
-                  <Table.Th className={classes.username}>Username</Table.Th>
-                  <Table.Th className={classes.description}>
+                  <Table.Th
+                    className={`${classes.action} ${classes.headerCell}`}
+                  >
+                    Save
+                  </Table.Th>
+                  <Table.Th className={`${classes.id} ${classes.headerCell}`}>
+                    ID
+                  </Table.Th>
+                  <Table.Th
+                    className={`${classes.username} ${classes.headerCell}`}
+                  >
+                    Username
+                  </Table.Th>
+                  <Table.Th
+                    className={`${classes.description} ${classes.headerCell}`}
+                  >
                     Repo Description
                   </Table.Th>
                   <Table.Th
-                    className={classes.stars}
+                    className={`${classes.stars} ${classes.headerCell}`}
                     onClick={() => handleSortChange('stars')}
                   >
-                    <Flex justify="space-between">
+                    <Flex justify="space-between" align="center">
                       Stars {getSortIcon('stars')}
                     </Flex>
                   </Table.Th>
                   <Table.Th
-                    className={classes.forks}
+                    className={`${classes.forks} ${classes.headerCell}`}
                     onClick={() => handleSortChange('forks')}
                   >
-                    <Flex justify="space-between">
+                    <Flex justify="space-between" align="center">
                       Forks {getSortIcon('forks')}
                     </Flex>
                   </Table.Th>
                   <Table.Th
-                    className={classes.lastUpdate}
+                    className={`${classes.lastUpdate} ${classes.headerCell}`}
                     onClick={() => handleSortChange('lastUpdate')}
                   >
-                    <Flex justify="space-between">
+                    <Flex justify="space-between" align="center">
                       Last Update {getSortIcon('lastUpdate')}
                     </Flex>
                   </Table.Th>
@@ -187,7 +206,7 @@ const RepoTable: React.FC = () => {
                 <Table.Tbody>{rows}</Table.Tbody>
               )}
               <Table.Caption>
-                <Flex align="center">
+                <Flex align="center" className={classes.caption}>
                   <IconAlertCircle size={20} style={{ marginRight: 10 }} />{' '}
                   Click on a row to open the repository on GitHub
                 </Flex>
@@ -198,6 +217,8 @@ const RepoTable: React.FC = () => {
         <CustomCard>
           <Center mt="sm">
             <Pagination
+              className={classes.pagination}
+              classNames={{ control: classes.paginationControl }}
               total={totalPages}
               value={currentPage}
               onChange={handlePageChange}

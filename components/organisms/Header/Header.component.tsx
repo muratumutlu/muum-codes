@@ -1,85 +1,87 @@
 /* eslint-disable import/order */
-import { AuthControls, Logo, ThemeSwitcher } from '@/components';
-import { ActionIcon, Button, Container, Group, Menu, rem } from '@mantine/core';
+import { AuthControls, Logo } from '@/components';
+import { Badge, Button, Container, Group, Menu, rem } from '@mantine/core';
 
 import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconQuestionMark,
+  IconMenu2,
+  IconRocket,
+  IconScan,
+  IconServerBolt,
 } from '@tabler/icons-react';
 import classes from './Header.module.css';
 
-import router from 'next/router';
-
 export default function Header() {
-  const handleLinkedinClick = () => {
-    router.push('https://linkedin.com/in/murat-umutlu');
-  };
-
-  const handleGithubClick = () => {
-    router.push('https://github.com/muratumutlu/muum-repo-explorer');
-  };
-
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
-        <Logo />
-        <Group visibleFrom="md">
+        <Group gap="md" wrap="nowrap">
+          <Logo />
+          <Badge className={classes.statusBadge} visibleFrom="sm">
+            AI-native
+          </Badge>
+        </Group>
+
+        <Group className={classes.nav} visibleFrom="md">
+          <Button
+            component="a"
+            href="#workspace"
+            variant="subtle"
+            leftSection={<IconScan size={16} />}
+            className={classes.navButton}
+          >
+            Scout
+          </Button>
+          <Button
+            component="a"
+            href="#signals"
+            variant="subtle"
+            leftSection={<IconServerBolt size={16} />}
+            className={classes.navButton}
+          >
+            Signals
+          </Button>
+          <Button
+            component="a"
+            href="https://github.com/muratumutlu/muum-repo-explorer"
+            target="_blank"
+            variant="subtle"
+            leftSection={<IconRocket size={16} />}
+            className={classes.navButton}
+          >
+            Build log
+          </Button>
+        </Group>
+
+        <Group className={classes.tools} visibleFrom="md">
           <AuthControls />
-          <ThemeSwitcher />
-          <ActionIcon
-            aria-label="Who am I?"
-            radius="xl"
-            size="lg"
-            variant="transparent"
-            color="gray"
-            onClick={handleLinkedinClick}
-          >
-            <IconBrandLinkedin />
-          </ActionIcon>
-          <ActionIcon
-            aria-label="GitHub Repository"
-            radius="xl"
-            size="lg"
-            variant="transparent"
-            color="gray"
-            onClick={handleGithubClick}
-          >
-            <IconBrandGithub />
-          </ActionIcon>
         </Group>
         <Group align="center" hiddenFrom="md">
           <AuthControls compact />
           <Menu shadow="md" width={200}>
             <Menu.Target>
-              <Button radius="xl">
-                <IconQuestionMark />
+              <Button radius="sm" className={classes.menuButton}>
+                <IconMenu2 size={18} />
               </Button>
             </Menu.Target>
 
             <Menu.Dropdown>
-              <Menu.Item>
-                <ThemeSwitcher />
-              </Menu.Item>
               <Menu.Item
-                onClick={handleLinkedinClick}
+                component="a"
+                href="#workspace"
                 leftSection={
-                  <IconBrandLinkedin
-                    style={{ width: rem(14), height: rem(14) }}
-                  />
+                  <IconScan style={{ width: rem(14), height: rem(14) }} />
                 }
               >
-                Linkedin
+                Scout
               </Menu.Item>
               <Menu.Item
-                onClick={handleGithubClick}
+                component="a"
+                href="#signals"
                 leftSection={
-                  <IconBrandGithub
-                    style={{ width: rem(14), height: rem(14) }}
-                  />
+                  <IconServerBolt style={{ width: rem(14), height: rem(14) }} />
                 }
               >
-                GitHub Repo
+                Signals
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>

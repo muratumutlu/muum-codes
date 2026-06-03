@@ -1,26 +1,59 @@
-.image {
-	transition: transform 500ms ease;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-}
-
-.overlay {
-	background-image: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 0) 0%,
-		rgba(0, 0, 0, 0.05) 30%
-	);
-}
-
-.loading {
-	width: 107px;
-	height: 44px;
-}
-
 .link {
-	text-decoration: none;
-	font-size: 2.5rem;
-	font-weight: 900;
-	letter-spacing: -2;
-	padding-right: 20;
-	cursor: "pointer";
+  display: inline-flex;
+  align-items: center;
+  gap: rem(10px);
+  min-width: rem(188px);
+  color: light-dark(#17130d, #f8f5e7);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: rem(62px);
+  height: rem(36px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.18));
+  border-radius: rem(6px);
+  background: light-dark(rgba(255, 253, 244, 0.72), rgba(248, 245, 231, 0.06));
+}
+
+.image {
+  transition: transform 160ms ease;
+}
+
+.wordmark {
+  display: grid;
+  gap: rem(1px);
+  line-height: 1;
+}
+
+.name {
+  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  font-size: rem(18px);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.product {
+  color: light-dark(#5f3b00, #ffd166);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(10px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.link:hover .image {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 420px) {
+  .link {
+    min-width: auto;
+  }
+
+  .product {
+    display: none;
+  }
 }

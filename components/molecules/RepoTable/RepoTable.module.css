@@ -6,7 +6,7 @@
 .id {
   width: 10%;
   min-width: 80px;
-  border-top-left-radius: 8;
+  border-top-left-radius: rem(8px);
 
   @media (max-width: 768px) {
     width: 35vw;
@@ -42,21 +42,92 @@
 }
 
 .lastUpdate {
-  border-top-right-radius: 8;
-}
-
-.cardWrapper {
-  width: 100%;
-  height: auto;
-  padding: 0px;
-  border: 1px solid #f6f6f60f;
-  box-shadow: 0px 0px 33px 9px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: rem(8px);
 }
 
 .tableContainer {
   overflow-x: auto;
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border-radius: rem(8px);
+  background: light-dark(rgba(255, 253, 244, 0.64), rgba(248, 245, 231, 0.04));
 
   @media (min-width: 768px) {
     width: 100%;
   }
+}
+
+.table {
+  min-width: rem(920px);
+  color: light-dark(#17130d, #f8f5e7);
+}
+
+.tableHead {
+  background: linear-gradient(
+    90deg,
+    light-dark(#f8f3df, #15130f),
+    light-dark(#fffdf4, #17130d)
+  );
+}
+
+.headerCell {
+  height: rem(48px);
+  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.14));
+  color: light-dark(#5f3b00, #ffd166);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(11px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cell {
+  border-color: light-dark(rgba(23, 19, 13, 0.12), rgba(248, 245, 231, 0.1));
+  color: light-dark(#332d23, #e7dfc8);
+  font-size: rem(14px);
+  vertical-align: middle;
+}
+
+.row {
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.row:nth-of-type(odd) {
+  background: light-dark(rgba(255, 253, 244, 0.38), rgba(248, 245, 231, 0.03));
+}
+
+.row:nth-of-type(even) {
+  background: light-dark(rgba(248, 243, 223, 0.56), rgba(248, 245, 231, 0.015));
+}
+
+.row:hover {
+  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.1)) !important;
+}
+
+.row:hover .cell {
+  color: light-dark(#17130d, #f8f5e7);
+}
+
+.caption {
+  padding: rem(12px) rem(4px) rem(2px);
+  color: light-dark(#5b5345, #c9c2aa);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+}
+
+.pagination {
+  --pagination-active-bg: light-dark(#17130d, #f8f5e7);
+  --pagination-active-color: light-dark(#fffdf4, #17130d);
+}
+
+.paginationControl {
+  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border-radius: rem(4px);
+  background: light-dark(rgba(255, 253, 244, 0.68), rgba(248, 245, 231, 0.04));
+  color: light-dark(#17130d, #f8f5e7);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
 }

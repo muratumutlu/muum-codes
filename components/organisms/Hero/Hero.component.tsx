@@ -8,8 +8,14 @@ import {
   Text,
   Title,
 } from '@mantine/core';
-import Image from 'next/image';
 import classes from './Hero.module.css';
+
+const signalRows = [
+  { metric: '01', label: 'Scout', value: 'AI infra, agents, OSS signals' },
+  { metric: '02', label: 'Save', value: 'Clerk workspace + D1 index' },
+  { metric: '03', label: 'Snapshot', value: 'R2 repository context' },
+  { metric: '04', label: 'Prepare', value: 'Triage-ready maintainer memory' },
+];
 
 function Hero() {
   return (
@@ -47,24 +53,45 @@ function Hero() {
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Paper className={classes.visualPanel}>
             <div className={classes.visualHeader}>
-              <span>maintainer map</span>
+              <span>repo signal console</span>
               <span>live workspace</span>
             </div>
-            <div className={classes.imageFrame}>
-              <Image
-                src="/images/architecture.png"
-                alt="Muum repository intelligence architecture"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 520px"
-                className={classes.architectureImage}
-              />
+
+            <div className={classes.consoleFrame}>
+              <div className={classes.consoleTopline}>
+                <span>source/github.search</span>
+                <span>ready</span>
+              </div>
+
+              <div className={classes.radar}>
+                <span className={classes.radarCore}>Muum</span>
+                <span className={classes.radarRing} />
+                <span className={classes.radarRingWide} />
+              </div>
+
+              <div className={classes.signalRows}>
+                {signalRows.map((row) => (
+                  <div className={classes.signalRow} key={row.metric}>
+                    <span>{row.metric}</span>
+                    <strong>{row.label}</strong>
+                    <em>{row.value}</em>
+                  </div>
+                ))}
+              </div>
+
+              <div className={classes.pipeline}>
+                <span className={classes.pipelineItem}>GitHub</span>
+                <span className={classes.pipelineItem}>D1</span>
+                <span className={classes.pipelineItem}>R2</span>
+                <span className={classes.pipelineItem}>Clerk</span>
+              </div>
             </div>
+
             <div className={classes.signalGrid}>
-              <span>GitHub signal</span>
-              <span>D1 saved list</span>
-              <span>R2 snapshot</span>
-              <span>Clerk workspace</span>
+              <span className={classes.signalGridItem}>GitHub signal</span>
+              <span className={classes.signalGridItem}>D1 saved list</span>
+              <span className={classes.signalGridItem}>R2 snapshot</span>
+              <span className={classes.signalGridItem}>Clerk workspace</span>
             </div>
           </Paper>
         </Grid.Col>

@@ -1,37 +1,71 @@
 .header {
-  height: rem(56px);
+  height: rem(68px);
   margin-bottom: 0;
-  background-color: var(--mantine-color-body);
-  border-bottom: rem(1px) solid
-    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  background: linear-gradient(
+      90deg,
+      light-dark(rgba(255, 253, 244, 0.96), rgba(18, 16, 13, 0.94)),
+      light-dark(rgba(248, 243, 223, 0.94), rgba(21, 19, 15, 0.94))
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent rem(30px),
+      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) rem(30px),
+      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) rem(31px)
+    );
+  border-bottom: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  backdrop-filter: blur(14px);
 }
 
 .inner {
-  height: rem(56px);
+  height: rem(68px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: rem(16px);
 }
 
-.link {
-  display: block;
-  line-height: 1;
-  padding: rem(8px) rem(12px);
-  border-radius: var(--mantine-radius-sm);
-  text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-size: var(--mantine-font-size-sm);
-  font-weight: 500;
+.statusBadge {
+  height: rem(28px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.22));
+  border-radius: rem(4px);
+  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.12));
+  color: light-dark(#24584f, #9ae6b4);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+}
 
-  @mixin hover {
-    background-color: light-dark(
-      var(--mantine-color-gray-0),
-      var(--mantine-color-dark-6)
-    );
-  }
+.nav {
+  padding: rem(5px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.14));
+  border-radius: rem(7px);
+  background: light-dark(rgba(255, 253, 244, 0.78), rgba(248, 245, 231, 0.04));
+}
 
-  [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
+.navButton {
+  height: rem(34px);
+  border-radius: rem(4px);
+  color: light-dark(#17130d, #f8f5e7);
+  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  font-size: rem(12px);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.tools {
+  gap: rem(8px);
+}
+
+.menuButton {
+  height: rem(38px);
+  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.2));
+  background: light-dark(#17130d, #f8f5e7);
+  color: light-dark(#fffdf4, #17130d);
+}
+
+@media (max-width: 768px) {
+  .header,
+  .inner {
+    height: rem(64px);
   }
 }

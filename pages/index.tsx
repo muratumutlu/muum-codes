@@ -36,7 +36,7 @@ export default function HomePage() {
       <MetaTags type="homepage" />
       <Hero />
 
-      <Paper component="section" className={classes.console}>
+      <Paper id="workspace" component="section" className={classes.console}>
         <Stack gap="lg">
           <Group justify="space-between" align="flex-start" gap="lg">
             <div>
@@ -90,7 +90,9 @@ export default function HomePage() {
         </CustomCard>
       )}
 
-      <RepoTable />
+      <div id="signals">
+        <RepoTable />
+      </div>
     </HomePageTemplate>
   );
 }

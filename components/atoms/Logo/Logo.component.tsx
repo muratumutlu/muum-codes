@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { Skeleton, Stack, useMantineColorScheme } from '@mantine/core';
+import { Skeleton, useMantineColorScheme } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
+import classes from './Logo.module.css';
 
 interface LogoProps {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
@@ -19,20 +20,25 @@ export default function Logo({ onClick }: LogoProps) {
     setLogoSrc(newLogoSrc);
   }, [colorScheme]);
 
-  if (!logoSrc) return <Skeleton height={44} width={107} />;
+  if (!logoSrc) return <Skeleton height={44} width={188} />;
 
   return (
-    <Link href="/" onClick={onClick} passHref>
-      <Stack>
+    <Link href="/" onClick={onClick} className={classes.link} passHref>
+      <span className={classes.mark}>
         <Image
+          className={classes.image}
           src={logoSrc}
           alt="Muum Repo Explorer"
-          width={107}
-          height={44}
+          width={54}
+          height={22}
           title="Muum Repo Explorer"
           priority
         />
-      </Stack>
+      </span>
+      <span className={classes.wordmark}>
+        <span className={classes.name}>Muum</span>
+        <span className={classes.product}>Repo Explorer</span>
+      </span>
     </Link>
   );
 }
