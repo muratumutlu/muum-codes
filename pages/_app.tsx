@@ -3,7 +3,11 @@ import { Header } from '@/components';
 import { persistor, store } from '@/store';
 import { AppShell, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
-import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  HydrationBoundary,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';

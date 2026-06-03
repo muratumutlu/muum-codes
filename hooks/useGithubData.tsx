@@ -13,22 +13,24 @@ export const useGithubData = (
   language: string,
   sortBy: SortBy,
   orderBy: OrderBy,
-  page: number
+  page: number,
 ) => {
   const dispatch = useDispatch();
 
   const queryKey = useMemo(
     () => ['githubSearchRepos', searchTerm, language, sortBy, orderBy, page],
-    [searchTerm, language, sortBy, orderBy, page]
+    [searchTerm, language, sortBy, orderBy, page],
   );
 
   const { data, isError, error, isLoading } = useQuery({
     queryKey,
     queryFn: () =>
-      fetchGithubRepos(searchTerm, language, sortBy, orderBy, page).then((data) => {
-        dispatch(setTotalPages(data.totalPages)); // Dispatching the totalPage count here after data is fetched
-        return data;
-      }),
+      fetchGithubRepos(searchTerm, language, sortBy, orderBy, page).then(
+        (data) => {
+          dispatch(setTotalPages(data.totalPages)); // Dispatching the totalPage count here after data is fetched
+          return data;
+        },
+      ),
     staleTime: 300000,
   });
 

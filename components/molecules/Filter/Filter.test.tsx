@@ -13,7 +13,7 @@ describe('Filter', () => {
     render(
       <MantineProvider>
         <Filter value="option1" onChange={() => {}} options={options} />
-      </MantineProvider>
+      </MantineProvider>,
     );
 
     options.forEach((option) => {
@@ -26,7 +26,7 @@ describe('Filter', () => {
     render(
       <MantineProvider>
         <Filter value="option2" onChange={onChange} options={options} />
-      </MantineProvider>
+      </MantineProvider>,
     );
 
     const option2Radio = screen.getByLabelText('Option 2');

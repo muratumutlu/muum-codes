@@ -6,17 +6,22 @@ interface MetaTagsProps {
   description?: string;
   keywords?: string;
 }
-const MetaTags: React.FC<MetaTagsProps> = ({ type, title, description, keywords }) => {
+const MetaTags: React.FC<MetaTagsProps> = ({
+  type,
+  title,
+  description,
+  keywords,
+}) => {
   const defaultTitles = {
-    homepage: 'Muum Codes | Github Project Searching Tool',
-    singlePage: 'About Us | Muum Codes',
+    homepage: 'Muum Repo Explorer | Open-source repository intelligence',
+    singlePage: 'About | Muum Repo Explorer',
   };
 
   const defaultDescriptions = {
     homepage:
-      'Muum Codes is a Github project searching tool. You can search for any project on Github and see the details.',
+      'Muum Repo Explorer helps developers discover, compare, and triage open-source repositories across the web and macOS.',
     singlePage:
-      'Muum Codes is a Github project searching tool. You can search for any project on Github and see the details.',
+      'Muum Repo Explorer is an open-source repository discovery and maintenance triage tool for web and macOS.',
   };
 
   const pageTitle = title || defaultTitles[type];
@@ -25,19 +30,17 @@ const MetaTags: React.FC<MetaTagsProps> = ({ type, title, description, keywords 
   return (
     <Head>
       <title>{pageTitle}</title>
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-      <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
-      <link rel="shortcut icon" href="/favicon/favicon.ico" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <meta name="description" content={pageDescription} />
+      <meta name="application-name" content="Muum Repo Explorer" />
+      <link rel="canonical" href="https://muum.dev" />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
+      <meta property="og:url" content="https://muum.dev" />
+      <meta property="og:site_name" content="Muum Repo Explorer" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
