@@ -13,9 +13,9 @@ export default function SearchInput({ value, onChange }: SearchInputProps) {
 
   return (
     <TextInput
-      label="Open-source scan"
-      description="Type a topic, repo name, agent workflow, or infrastructure layer"
-      placeholder="agent runtime, code review, vector database..."
+      label="Repository search"
+      description="Search GitHub by repo name, topic, framework, or capability"
+      placeholder="e.g. mcp server, eval framework, browser automation"
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       value={value}
@@ -23,7 +23,7 @@ export default function SearchInput({ value, onChange }: SearchInputProps) {
       className={classes.input}
       inputContainer={(children) => (
         <Tooltip
-          label="You are free to write a repo name or any topic"
+          label="This is GitHub keyword search; short queries work best"
           position="top-start"
           opened={focused}
         >

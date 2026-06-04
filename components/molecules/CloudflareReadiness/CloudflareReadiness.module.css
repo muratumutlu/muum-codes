@@ -1,0 +1,55 @@
+.panel,
+.skeleton {
+  margin-bottom: rem(18px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface);
+  box-shadow: none;
+}
+
+.panel {
+  padding: rem(16px) rem(18px);
+}
+
+.content {
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.title {
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.description {
+  color: var(--app-text-muted);
+  font-size: rem(14px);
+}
+
+.statusActive,
+.statusMuted {
+  height: rem(28px);
+  border-radius: rem(4px);
+  font-family: var(--app-font-mono);
+  font-size: rem(11px);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.statusActive {
+  border-color: var(--app-accent);
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.statusMuted {
+  border-color: var(--app-border);
+  background: var(--app-surface-muted);
+  color: var(--app-text-muted);
+}

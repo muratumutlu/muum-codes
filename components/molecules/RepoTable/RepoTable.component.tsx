@@ -2,6 +2,7 @@
 import React from 'react';
 
 import type { GithubRepository } from '@/types/GithubRepo.types';
+import { getRepoSignalAssessment } from '@/helpers/repoSignals';
 import { useGithubData } from '@/hooks';
 import {
   Avatar,
@@ -12,13 +13,13 @@ import {
   Pagination,
   Skeleton,
   Table,
-  Text,
 } from '@mantine/core';
 import {
   IconAlertCircle,
   IconArrowNarrowDown,
   IconArrowNarrowUp,
 } from '@tabler/icons-react';
+import { useRouter } from 'next/router';
 
 import { beautifyDate } from '@/utils/date';
 
@@ -35,20 +36,37 @@ import { CustomCard, SaveRepositoryButton } from '@/components';
 import type { SortBy } from '@/types/Filter.types';
 
 const RepoTable: React.FC = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
-  const { language, searchTerm, sortBy, orderBy, currentPage, totalPages } =
-    useSelector(selectFilter);
+  const filter = useSelector(selectFilter) as ReturnType<
+    typeof selectFilter
+  > & {
+    language?: string;
+  };
+  const { searchTerm, sortBy, orderBy, currentPage, totalPages } = filter;
+  const activeLanguages = Array.isArray(filter.languages)
+    ? filter.languages
+    : [filter.language ?? 'javascript'];
 
   const { isLoading, items } = useGithubData(
     searchTerm,
-    language,
+    activeLanguages,
     sortBy as SortBy,
     orderBy,
     currentPage,
   );
 
-  const handleRepoClick = (repo: string) => {
-    window.open(repo, '_blank');
+  const handleRepoClick = (repo: GithubRepository) => {
+    const [fallbackOwner, fallbackName] = repo.full_name?.split('/') ?? [];
+    const owner = repo.owner?.login ?? fallbackOwner;
+    const name = repo.name ?? fallbackName;
+
+    if (!owner || !name) return;
+
+    router.push({
+      pathname: '/repository',
+      query: { owner, name },
+    });
   };
 
   const handlePageChange = (page: number) => {
@@ -70,47 +88,62 @@ const RepoTable: React.FC = () => {
     return orderBy === 'asc' ? <IconArrowNarrowUp /> : <IconArrowNarrowDown />;
   };
 
-  const rows = items?.map((repo: GithubRepository) => (
-    <Table.Tr
-      key={repo.id}
-      onClick={() => handleRepoClick(repo.html_url ?? repo.svn_url ?? '')}
-      className={classes.row}
-    >
-      <Table.Td className={`${classes.action} ${classes.cell}`}>
-        <SaveRepositoryButton repo={repo} />
-      </Table.Td>
-      <Table.Td className={`${classes.id} ${classes.cell}`}>
-        <Text>{repo.id}</Text>
-      </Table.Td>
-      <Table.Td className={`${classes.username} ${classes.cell}`}>
-        <Flex justify="start" align="center">
-          <Avatar
-            src={repo.owner?.avatar_url}
-            alt={repo.owner?.login}
-            radius="md"
-            size="sm"
-            mr="xs"
-          />
-          <Badge color="blue" variant="filled" radius="sm">
-            {repo.owner?.login}
-          </Badge>
-        </Flex>
-      </Table.Td>
+  const rows = items?.map((repo: GithubRepository) => {
+    const signal = getRepoSignalAssessment(repo);
 
-      <Table.Td className={`${classes.description} ${classes.cell}`}>
-        {repo.description}
-      </Table.Td>
-      <Table.Td className={`${classes.stars} ${classes.cell}`}>
-        {repo.stargazers_count}
-      </Table.Td>
-      <Table.Td className={`${classes.forks} ${classes.cell}`}>
-        {repo.forks}
-      </Table.Td>
-      <Table.Td className={`${classes.lastUpdate} ${classes.cell}`}>
-        {beautifyDate(repo.updated_at)}
-      </Table.Td>
-    </Table.Tr>
-  ));
+    return (
+      <Table.Tr
+        key={repo.id}
+        onClick={() => handleRepoClick(repo)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleRepoClick(repo);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        className={classes.row}
+      >
+        <Table.Td className={`${classes.action} ${classes.cell}`}>
+          <SaveRepositoryButton repo={repo} />
+        </Table.Td>
+        <Table.Td className={`${classes.signal} ${classes.cell}`}>
+          <div className={classes.signalBadge}>
+            <span>{signal.score}</span>
+            <em>{signal.grade}</em>
+          </div>
+        </Table.Td>
+        <Table.Td className={`${classes.username} ${classes.cell}`}>
+          <Flex justify="start" align="center">
+            <Avatar
+              src={repo.owner?.avatar_url}
+              alt={repo.owner?.login}
+              radius="md"
+              size="sm"
+              mr="xs"
+            />
+            <Badge color="blue" variant="filled" radius="sm">
+              {repo.owner?.login}
+            </Badge>
+          </Flex>
+        </Table.Td>
+
+        <Table.Td className={`${classes.description} ${classes.cell}`}>
+          {repo.description}
+        </Table.Td>
+        <Table.Td className={`${classes.stars} ${classes.cell}`}>
+          {repo.stargazers_count}
+        </Table.Td>
+        <Table.Td className={`${classes.forks} ${classes.cell}`}>
+          {repo.forks}
+        </Table.Td>
+        <Table.Td className={`${classes.lastUpdate} ${classes.cell}`}>
+          {beautifyDate(repo.updated_at)}
+        </Table.Td>
+      </Table.Tr>
+    );
+  });
 
   const rowsSkeleton = Array.from({ length: 20 }).map((_, index) => (
     <Table.Tr key={index} style={{ width: '100%' }}>
@@ -162,8 +195,10 @@ const RepoTable: React.FC = () => {
                   >
                     Save
                   </Table.Th>
-                  <Table.Th className={`${classes.id} ${classes.headerCell}`}>
-                    ID
+                  <Table.Th
+                    className={`${classes.signal} ${classes.headerCell}`}
+                  >
+                    Signal
                   </Table.Th>
                   <Table.Th
                     className={`${classes.username} ${classes.headerCell}`}
@@ -208,7 +243,7 @@ const RepoTable: React.FC = () => {
               <Table.Caption>
                 <Flex align="center" className={classes.caption}>
                   <IconAlertCircle size={20} style={{ marginRight: 10 }} />{' '}
-                  Click on a row to open the repository on GitHub
+                  Click on a row to inspect repository details
                 </Flex>
               </Table.Caption>
             </Table>

@@ -6,9 +6,10 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-} from '@clerk/nextjs';
-import { Badge, Button, Group, Tooltip } from '@mantine/core';
+} from '@clerk/clerk-react';
+import { Badge, Group, Tooltip } from '@mantine/core';
 import { IconLogin2, IconUserPlus } from '@tabler/icons-react';
+import classes from './AuthControls.module.css';
 
 interface AuthControlsProps {
   compact?: boolean;
@@ -18,7 +19,7 @@ export default function AuthControls({ compact = false }: AuthControlsProps) {
   if (!isClerkConfigured) {
     return (
       <Tooltip label="Set NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY">
-        <Badge color="gray" variant="light">
+        <Badge className={classes.offBadge} variant="outline">
           Clerk off
         </Badge>
       </Tooltip>
@@ -29,19 +30,21 @@ export default function AuthControls({ compact = false }: AuthControlsProps) {
     <Group gap="xs" wrap="nowrap">
       <SignedOut>
         <SignInButton mode="modal">
-          <Button
-            size={compact ? 'xs' : 'sm'}
-            variant="subtle"
-            leftSection={<IconLogin2 size={16} />}
+          <button
+            type="button"
+            className={classes.secondaryButton}
+            data-compact={compact || undefined}
           >
+            <IconLogin2 size={16} />
             Sign in
-          </Button>
+          </button>
         </SignInButton>
         {!compact && (
           <SignUpButton mode="modal">
-            <Button size="sm" leftSection={<IconUserPlus size={16} />}>
+            <button type="button" className={classes.primaryButton}>
+              <IconUserPlus size={16} />
               Join
-            </Button>
+            </button>
           </SignUpButton>
         )}
       </SignedOut>

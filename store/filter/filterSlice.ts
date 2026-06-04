@@ -4,7 +4,7 @@ import { FilterState, OrderBy, SortBy } from '@/types/Filter.types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState: FilterState = {
-  language: 'javascript',
+  languages: ['javascript'],
   searchTerm: '',
   sortBy: 'stars',
   orderBy: 'desc',
@@ -16,8 +16,8 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setLanguage: (state, action: PayloadAction<string>) => {
-      state.language = action.payload;
+    setLanguages: (state, action: PayloadAction<string[]>) => {
+      state.languages = action.payload;
     },
     setSearchTerm: (state, action: PayloadAction<string>) => {
       state.searchTerm = action.payload;
@@ -35,7 +35,7 @@ export const filterSlice = createSlice({
       state.totalPages = action.payload;
     },
     resetAll: (state) => {
-      state.language = 'javascript';
+      state.languages = ['javascript'];
       state.searchTerm = '';
       state.sortBy = 'lastUpdate';
       state.orderBy = 'desc';
@@ -45,7 +45,7 @@ export const filterSlice = createSlice({
 });
 
 export const {
-  setLanguage,
+  setLanguages,
   setSearchTerm,
   setSortBy,
   setOrderBy,

@@ -1,0 +1,51 @@
+.offBadge,
+.secondaryButton,
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(7px);
+  min-height: rem(34px);
+  padding: 0 rem(12px);
+  border: 0;
+  border-radius: rem(4px);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.secondaryButton[data-compact] {
+  min-height: rem(30px);
+  padding: 0 rem(9px);
+  font-size: rem(11px);
+}
+
+.offBadge {
+  height: rem(28px);
+  border-color: var(--app-border);
+  background: var(--app-surface);
+  color: var(--app-text-muted);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--app-text);
+}
+
+.secondaryButton:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.primaryButton {
+  border: rem(1px) solid var(--app-border-strong);
+  background: var(--app-text);
+  color: var(--app-bg-strong);
+}
+
+.primaryButton:hover {
+  background: var(--app-accent);
+  color: var(--app-bg-strong);
+}

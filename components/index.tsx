@@ -15,6 +15,7 @@ export { default as SearchInput } from './molecules/SearchInput/SearchInput.comp
 
 // ORGANISMS
 export { default as Footer } from './organisms/Footer/Footer.component';
+export { default as FeaturedStack } from './organisms/FeaturedStack/FeaturedStack.component';
 export { default as Header } from './organisms/Header/Header.component';
 export { default as Hero } from './organisms/Hero/Hero.component';
 

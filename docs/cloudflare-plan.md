@@ -14,6 +14,34 @@ The repository includes a direct-upload workflow with Wrangler. It requires thes
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
+## Deploy Without GitHub Actions
+
+If GitHub Actions is blocked by billing or quota issues, deploy directly from a local terminal with Wrangler.
+
+Use one of these auth paths:
+
+```bash
+npx wrangler login
+```
+
+or export a scoped API token:
+
+```bash
+export CLOUDFLARE_API_TOKEN=...
+export CLOUDFLARE_ACCOUNT_ID=...
+```
+
+Then run:
+
+```bash
+npm test
+npm run deploy:cloudflare
+```
+
+`npm run deploy:cloudflare` creates the Pages project if needed, builds the static Next export into `out`, and uploads it to the `muum-repo-explorer` Pages project. This bypasses GitHub Actions entirely.
+
+The GitHub workflow is still useful once billing is fixed, but it is not required for production deployment.
+
 ## Domain Notes
 
 `muum.dev` is already using Cloudflare nameservers. After the Pages project exists, add `muum.dev` as a custom domain in the Cloudflare Pages project. Cloudflare should then create or guide the required DNS record.

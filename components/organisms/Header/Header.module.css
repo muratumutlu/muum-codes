@@ -1,19 +1,8 @@
 .header {
   height: rem(68px);
-  margin-bottom: 0;
-  background: linear-gradient(
-      90deg,
-      light-dark(rgba(255, 253, 244, 0.96), rgba(18, 16, 13, 0.94)),
-      light-dark(rgba(248, 243, 223, 0.94), rgba(21, 19, 15, 0.94))
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent rem(30px),
-      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) rem(30px),
-      light-dark(rgba(18, 16, 13, 0.08), rgba(248, 245, 231, 0.08)) rem(31px)
-    );
-  border-bottom: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  margin-bottom: rem(18px);
+  background: var(--app-band);
+  border-bottom: rem(1px) solid var(--app-border);
   backdrop-filter: blur(14px);
 }
 
@@ -25,47 +14,44 @@
   gap: rem(16px);
 }
 
-.statusBadge {
-  height: rem(28px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.22));
-  border-radius: rem(4px);
-  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.12));
-  color: light-dark(#24584f, #9ae6b4);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
-  letter-spacing: 0;
-}
-
-.nav {
-  padding: rem(5px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.14));
-  border-radius: rem(7px);
-  background: light-dark(rgba(255, 253, 244, 0.78), rgba(248, 245, 231, 0.04));
-}
-
-.navButton {
-  height: rem(34px);
-  border-radius: rem(4px);
-  color: light-dark(#17130d, #f8f5e7);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
-  font-size: rem(12px);
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
 .tools {
   gap: rem(8px);
 }
 
-.menuButton {
-  height: rem(38px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.2));
-  background: light-dark(#17130d, #f8f5e7);
-  color: light-dark(#fffdf4, #17130d);
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  height: rem(34px);
+  padding: 0 rem(10px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(4px);
+  background: var(--app-surface);
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+}
+
+.navLink:hover {
+  border-color: var(--app-border-strong);
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
 }
 
 @media (max-width: 768px) {
   .header,
   .inner {
     height: rem(64px);
+  }
+
+  .header {
+    margin-bottom: rem(14px);
   }
 }

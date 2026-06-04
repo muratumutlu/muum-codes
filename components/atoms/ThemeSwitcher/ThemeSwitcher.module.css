@@ -2,3 +2,7 @@
   width: rem(24px);
   height: rem(24px);
 }
+
+.switch {
+  --mantine-color-gray-4: var(--app-border);
+}

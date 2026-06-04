@@ -68,6 +68,7 @@ export default function ThemeSwitcher() {
 
   return (
     <Switch
+      className={classes.switch}
       size="xl"
       checked={checked}
       onLabel={moonIcon}

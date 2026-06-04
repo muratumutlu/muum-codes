@@ -2,9 +2,10 @@
 import { Header } from '@/components';
 import { persistor, store } from '@/store';
 import { clerkPublishableKey, isClerkConfigured } from '@/utils/auth';
-import { ClerkProvider } from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/clerk-react';
 import { AppShell, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+import './globals.css';
 import {
   HydrationBoundary,
   QueryClient,

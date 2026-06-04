@@ -1,36 +1,25 @@
 .footer {
   margin-top: rem(48px);
   padding: rem(34px) 0 rem(24px);
-  border-top: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
-  background: linear-gradient(
-      90deg,
-      light-dark(rgba(255, 253, 244, 0.98), rgba(18, 16, 13, 0.96)),
-      light-dark(rgba(248, 243, 223, 0.96), rgba(21, 19, 15, 0.96))
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent rem(30px),
-      light-dark(rgba(18, 16, 13, 0.06), rgba(248, 245, 231, 0.08)) rem(30px),
-      light-dark(rgba(18, 16, 13, 0.06), rgba(248, 245, 231, 0.08)) rem(31px)
-    );
-  color: light-dark(#17130d, #f8f5e7);
+  border-top: rem(1px) solid var(--app-border);
+  background: var(--app-band);
+  color: var(--app-text);
 }
 
 .badge {
   margin-bottom: rem(12px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.22));
+  border: rem(1px) solid var(--app-border-strong);
   border-radius: rem(4px);
-  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.12));
-  color: light-dark(#24584f, #9ae6b4);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  font-family: var(--app-font-mono);
   letter-spacing: 0;
 }
 
 .title {
   max-width: rem(560px);
-  color: light-dark(#17130d, #f8f5e7);
-  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  color: var(--app-text);
+  font-family: var(--app-font-display);
   font-size: clamp(1.7rem, 3vw, 3rem);
   font-weight: 900;
   line-height: 1;
@@ -40,7 +29,7 @@
 .description {
   max-width: rem(520px);
   margin-top: rem(16px);
-  color: light-dark(#4c463a, #c9c2aa);
+  color: var(--app-text-soft);
   font-size: rem(16px);
   line-height: 1.65;
 }
@@ -63,31 +52,31 @@
 .signal {
   min-height: rem(176px);
   padding: rem(18px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
-  border-radius: rem(8px);
-  background: light-dark(rgba(255, 253, 244, 0.76), rgba(248, 245, 231, 0.05));
-  color: light-dark(#17130d, #f8f5e7);
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface);
+  color: var(--app-text);
 }
 
 .signal svg {
   margin-bottom: rem(22px);
-  color: light-dark(#24584f, #9ae6b4);
+  color: var(--app-accent);
 }
 
 .signal p:last-child {
   margin-top: rem(8px);
-  color: light-dark(#5b5345, #c9c2aa);
+  color: var(--app-text-muted);
   line-height: 1.45;
 }
 
 .divider {
   margin: rem(34px) 0 rem(20px);
-  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border-color: var(--app-border);
 }
 
 .kicker {
-  color: light-dark(#17130d, #f8f5e7);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
   font-weight: 800;
   letter-spacing: 0;
@@ -95,7 +84,7 @@
 }
 
 .link {
-  color: light-dark(#24584f, #9ae6b4);
+  color: var(--app-accent);
   font-size: var(--mantine-font-size-sm);
   padding-top: rem(3px);
   padding-bottom: rem(3px);
@@ -107,9 +96,14 @@
 }
 
 .socialButton {
-  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.24));
-  color: light-dark(#17130d, #f8f5e7);
-  background: light-dark(rgba(255, 253, 244, 0.55), rgba(255, 253, 244, 0.05));
+  border-color: var(--app-border-strong);
+  color: var(--app-text);
+  background: var(--app-surface);
+}
+
+.socialButton:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
 }
 
 .themeControl {
@@ -119,14 +113,14 @@
   height: rem(44px);
   margin-right: rem(8px);
   padding: 0 rem(12px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border: rem(1px) solid var(--app-border);
   border-radius: rem(7px);
-  background: light-dark(rgba(255, 253, 244, 0.72), rgba(248, 245, 231, 0.04));
+  background: var(--app-surface);
 }
 
 .themeLabel {
-  color: light-dark(#5f3b00, #ffd166);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-warn);
+  font-family: var(--app-font-mono);
   font-size: rem(11px);
   font-weight: 800;
   letter-spacing: 0;

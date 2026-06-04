@@ -3,7 +3,7 @@ export type SearchTerm = string | undefined;
 export type OrderBy = 'asc' | 'desc';
 
 export interface FilterState {
-  language: string;
+  languages: string[];
   searchTerm?: SearchTerm;
   sortBy: SortBy;
   orderBy: OrderBy;

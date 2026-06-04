@@ -1,19 +1,14 @@
 .card {
   width: 100%;
   height: auto;
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
-  border-radius: rem(8px);
-  background: linear-gradient(
-    180deg,
-    light-dark(rgba(255, 253, 244, 0.92), rgba(20, 18, 14, 0.9)),
-    light-dark(rgba(248, 243, 223, 0.78), rgba(18, 16, 13, 0.88))
-  );
-  box-shadow: 0 rem(14px) rem(34px)
-    light-dark(rgba(18, 16, 13, 0.08), rgba(0, 0, 0, 0.22));
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface);
+  box-shadow: none;
 }
 
 .title {
-  color: light-dark(#17130d, #f8f5e7);
+  color: var(--app-text);
   font-weight: 800;
   line-height: 1.2;
 }

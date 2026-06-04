@@ -2,11 +2,12 @@
 import { saveRepositoryToWorkspace } from '@/helpers/cloudflare';
 import type { GithubRepository } from '@/types/GithubRepo.types';
 import { isClerkConfigured } from '@/utils/auth';
-import { SignInButton, useAuth } from '@clerk/nextjs';
+import { SignInButton, useAuth } from '@clerk/clerk-react';
 import { ActionIcon, Tooltip } from '@mantine/core';
 import { IconBookmark, IconBookmarkFilled } from '@tabler/icons-react';
 import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
+import classes from './SaveRepositoryButton.module.css';
 
 interface SaveRepositoryButtonProps {
   repo: GithubRepository;
@@ -15,7 +16,12 @@ interface SaveRepositoryButtonProps {
 function DisabledSaveRepositoryButton() {
   return (
     <Tooltip label="Clerk is not configured">
-      <ActionIcon aria-label="Save repository" disabled variant="subtle">
+      <ActionIcon
+        aria-label="Save repository"
+        className={classes.saveButton}
+        disabled
+        variant="subtle"
+      >
         <IconBookmark size={18} />
       </ActionIcon>
     </Tooltip>
@@ -43,6 +49,7 @@ function ClerkSaveRepositoryButton({ repo }: SaveRepositoryButtonProps) {
         <Tooltip label="Sign in to save">
           <ActionIcon
             aria-label="Sign in to save repository"
+            className={classes.saveButton}
             color="gray"
             onClick={(event) => event.stopPropagation()}
             variant="subtle"
@@ -68,6 +75,7 @@ function ClerkSaveRepositoryButton({ repo }: SaveRepositoryButtonProps) {
     >
       <ActionIcon
         aria-label="Save repository"
+        className={saved ? classes.saveButtonActive : classes.saveButton}
         color={mutation.isError ? 'red' : saved ? 'teal' : 'gray'}
         loading={mutation.isPending}
         onClick={(event) => {

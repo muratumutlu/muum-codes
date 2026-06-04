@@ -3,14 +3,42 @@
   min-width: 64px;
 }
 
-.id {
+.signal {
   width: 10%;
-  min-width: 80px;
+  min-width: 98px;
   border-top-left-radius: rem(8px);
 
   @media (max-width: 768px) {
     width: 35vw;
   }
+}
+
+.signalBadge {
+  display: grid;
+  gap: rem(2px);
+  width: rem(72px);
+  padding: rem(6px) rem(8px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(5px);
+  background: var(--app-accent-soft);
+}
+
+.signalBadge span {
+  color: var(--app-text);
+  font-family: var(--app-font-display);
+  font-size: rem(20px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.signalBadge em {
+  color: var(--app-accent);
+  font-family: var(--app-font-mono);
+  font-size: rem(9px);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .description {
@@ -47,9 +75,9 @@
 
 .tableContainer {
   overflow-x: auto;
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
-  border-radius: rem(8px);
-  background: light-dark(rgba(255, 253, 244, 0.64), rgba(248, 245, 231, 0.04));
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface);
 
   @media (min-width: 768px) {
     width: 100%;
@@ -58,22 +86,18 @@
 
 .table {
   min-width: rem(920px);
-  color: light-dark(#17130d, #f8f5e7);
+  color: var(--app-text);
 }
 
 .tableHead {
-  background: linear-gradient(
-    90deg,
-    light-dark(#f8f3df, #15130f),
-    light-dark(#fffdf4, #17130d)
-  );
+  background: var(--app-band);
 }
 
 .headerCell {
   height: rem(48px);
-  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.14));
-  color: light-dark(#5f3b00, #ffd166);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  border-color: var(--app-border);
+  color: var(--app-warn);
+  font-family: var(--app-font-mono);
   font-size: rem(11px);
   font-weight: 900;
   letter-spacing: 0;
@@ -82,8 +106,8 @@
 }
 
 .cell {
-  border-color: light-dark(rgba(23, 19, 13, 0.12), rgba(248, 245, 231, 0.1));
-  color: light-dark(#332d23, #e7dfc8);
+  border-color: var(--app-border);
+  color: var(--app-text-soft);
   font-size: rem(14px);
   vertical-align: middle;
 }
@@ -96,38 +120,38 @@
 }
 
 .row:nth-of-type(odd) {
-  background: light-dark(rgba(255, 253, 244, 0.38), rgba(248, 245, 231, 0.03));
+  background: color-mix(in srgb, var(--app-surface) 82%, transparent);
 }
 
 .row:nth-of-type(even) {
-  background: light-dark(rgba(248, 243, 223, 0.56), rgba(248, 245, 231, 0.015));
+  background: color-mix(in srgb, var(--app-surface-muted) 74%, transparent);
 }
 
 .row:hover {
-  background: light-dark(#dff7ed, rgba(154, 230, 180, 0.1)) !important;
+  background: var(--app-accent-soft) !important;
 }
 
 .row:hover .cell {
-  color: light-dark(#17130d, #f8f5e7);
+  color: var(--app-text);
 }
 
 .caption {
   padding: rem(12px) rem(4px) rem(2px);
-  color: light-dark(#5b5345, #c9c2aa);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-text-muted);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
 }
 
 .pagination {
-  --pagination-active-bg: light-dark(#17130d, #f8f5e7);
-  --pagination-active-color: light-dark(#fffdf4, #17130d);
+  --pagination-active-bg: var(--app-text);
+  --pagination-active-color: var(--app-bg-strong);
 }
 
 .paginationControl {
-  border-color: light-dark(#17130d, rgba(248, 245, 231, 0.16));
+  border-color: var(--app-border);
   border-radius: rem(4px);
-  background: light-dark(rgba(255, 253, 244, 0.68), rgba(248, 245, 231, 0.04));
-  color: light-dark(#17130d, #f8f5e7);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  background: var(--app-surface);
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
 }

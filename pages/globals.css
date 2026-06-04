@@ -1,0 +1,72 @@
+:root {
+  --app-font-display: 'Avenir Next', 'Trebuchet MS', verdana, sans-serif;
+  --app-font-mono: ui-monospace, sfmono-regular, 'IBM Plex Mono', monospace;
+  --app-bg: #fff;
+  --app-bg-strong: #fff;
+  --app-bg-soft: #f7f9f8;
+  --app-text: #121615;
+  --app-text-soft: #46504d;
+  --app-text-muted: #78827e;
+  --app-border: rgba(18, 22, 21, 0.11);
+  --app-border-strong: rgba(18, 22, 21, 0.28);
+  --app-accent: #0f766e;
+  --app-accent-strong: #0b5f59;
+  --app-accent-soft: #e8f7f4;
+  --app-warn: #7c5a12;
+  --app-warn-soft: #fff4cf;
+  --app-grid-line: rgba(18, 22, 21, 0.035);
+  --app-surface: #fff;
+  --app-surface-strong: #fff;
+  --app-surface-muted: #f6f8f7;
+  --app-shadow: rgba(18, 22, 21, 0.06);
+  --app-radius: 8px;
+  --app-radius-sm: 5px;
+  --app-page-pattern: linear-gradient(180deg, #fff 0, #f8faf9 100%);
+  --app-band: rgba(255, 255, 255, 0.92);
+}
+
+[data-mantine-color-scheme='dark'] {
+  --app-bg: #12100d;
+  --app-bg-strong: #17150f;
+  --app-bg-soft: #15130f;
+  --app-text: #f8f5e7;
+  --app-text-soft: #d8d1b9;
+  --app-text-muted: #b5ac96;
+  --app-border: rgba(248, 245, 231, 0.16);
+  --app-border-strong: rgba(248, 245, 231, 0.24);
+  --app-accent: #9ae6b4;
+  --app-accent-strong: #6ed49b;
+  --app-accent-soft: rgba(154, 230, 180, 0.12);
+  --app-warn: #ffd166;
+  --app-warn-soft: rgba(255, 209, 102, 0.12);
+  --app-grid-line: rgba(248, 245, 231, 0.07);
+  --app-surface: rgba(248, 245, 231, 0.05);
+  --app-surface-strong: rgba(21, 19, 15, 0.94);
+  --app-surface-muted: rgba(18, 16, 13, 0.78);
+  --app-shadow: rgba(0, 0, 0, 0.34);
+  --app-page-pattern: linear-gradient(
+    180deg,
+    rgba(18, 16, 13, 0.98),
+    rgba(15, 14, 11, 0.98) 34rem
+  );
+  --app-band: var(--app-surface-strong);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--app-page-pattern);
+  color: var(--app-text);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  letter-spacing: 0;
+}

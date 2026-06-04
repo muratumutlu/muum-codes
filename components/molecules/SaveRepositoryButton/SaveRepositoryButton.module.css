@@ -1,0 +1,17 @@
+.saveButton,
+.saveButtonActive {
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(4px);
+  color: var(--app-text-muted);
+}
+
+.saveButton:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.saveButtonActive {
+  border-color: var(--app-accent);
+  background: var(--app-accent);
+  color: var(--app-bg-strong);
+}

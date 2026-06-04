@@ -2,12 +2,13 @@
 import { fetchPlatformStatus } from '@/helpers/cloudflare';
 import { Badge, Group, Paper, Skeleton, Stack, Text } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
+import classes from './CloudflareReadiness.module.css';
 
 function StatusBadge({ active, label }: { active: boolean; label: string }) {
   return (
     <Badge
-      color={active ? 'teal' : 'gray'}
-      variant={active ? 'filled' : 'light'}
+      className={active ? classes.statusActive : classes.statusMuted}
+      variant="outline"
     >
       {label}
     </Badge>
@@ -22,16 +23,16 @@ export default function CloudflareReadiness() {
   });
 
   if (isLoading) {
-    return <Skeleton height={74} radius="md" />;
+    return <Skeleton className={classes.skeleton} height={78} radius="sm" />;
   }
 
   if (isError || !data) {
     return (
-      <Paper p="md" radius="md" withBorder mb="md">
-        <Group justify="space-between">
+      <Paper component="section" className={classes.panel}>
+        <Group justify="space-between" gap="md" className={classes.content}>
           <Stack gap={2}>
-            <Text fw={700}>Workspace backend</Text>
-            <Text c="dimmed" size="sm">
+            <Text className={classes.title}>Workspace backend</Text>
+            <Text className={classes.description}>
               Cloudflare Functions inactive
             </Text>
           </Stack>
@@ -42,11 +43,16 @@ export default function CloudflareReadiness() {
   }
 
   return (
-    <Paper p="md" radius="md" withBorder mb="md">
-      <Group justify="space-between" align="center">
+    <Paper component="section" className={classes.panel}>
+      <Group
+        justify="space-between"
+        align="center"
+        gap="md"
+        className={classes.content}
+      >
         <Stack gap={2}>
-          <Text fw={700}>Workspace backend</Text>
-          <Text c="dimmed" size="sm">
+          <Text className={classes.title}>Workspace backend</Text>
+          <Text className={classes.description}>
             Authenticated saves, repository snapshots, and workspace storage
           </Text>
         </Stack>

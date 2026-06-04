@@ -1,0 +1,75 @@
+.shell {
+  display: grid;
+}
+
+.backButton,
+.primaryAction {
+  height: rem(36px);
+  border-radius: rem(4px);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.backButton {
+  color: var(--app-text);
+}
+
+.scanLink {
+  color: var(--app-accent);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: rem(28px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface-strong);
+  box-shadow: 0 rem(8px) rem(24px) var(--app-shadow);
+}
+
+.eyebrow {
+  color: var(--app-warn);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: rem(850px);
+  color: var(--app-text);
+  font-family: var(--app-font-display);
+  font-size: clamp(2.3rem, 6vw, 5.3rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.copy {
+  max-width: rem(720px);
+  color: var(--app-text-soft);
+  font-size: rem(17px);
+  line-height: 1.62;
+}
+
+.primaryAction {
+  width: fit-content;
+  border: rem(1px) solid var(--app-border-strong);
+  background: var(--app-text);
+  color: var(--app-bg-strong);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: rem(18px);
+  }
+}

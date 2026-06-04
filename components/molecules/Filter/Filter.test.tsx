@@ -12,28 +12,29 @@ describe('Filter', () => {
   it('renders all options correctly', () => {
     render(
       <MantineProvider>
-        <Filter value="option1" onChange={() => {}} options={options} />
+        <Filter value={['option1']} onChange={() => {}} options={options} />
       </MantineProvider>,
     );
 
+    fireEvent.click(screen.getByLabelText('Language filters'));
+
     options.forEach((option) => {
-      expect(screen.getByLabelText(option.label)).toBeInTheDocument();
+      expect(screen.getAllByText(option.label).length).toBeGreaterThan(0);
     });
   });
 
-  it('selects the correct option', () => {
+  it('selects multiple options', () => {
     const onChange = jest.fn();
     render(
       <MantineProvider>
-        <Filter value="option2" onChange={onChange} options={options} />
+        <Filter value={['option2']} onChange={onChange} options={options} />
       </MantineProvider>,
     );
 
-    const option2Radio = screen.getByLabelText('Option 2');
-    expect(option2Radio).toBeChecked();
+    expect(screen.getAllByText('Option 2').length).toBeGreaterThan(0);
 
-    const option1Radio = screen.getByLabelText('Option 1');
-    fireEvent.click(option1Radio);
-    expect(onChange).toHaveBeenCalledWith('option1');
+    fireEvent.click(screen.getByLabelText('Language filters'));
+    fireEvent.click(screen.getByRole('option', { name: 'Option 1' }));
+    expect(onChange).toHaveBeenCalledWith(['option2', 'option1']);
   });
 });

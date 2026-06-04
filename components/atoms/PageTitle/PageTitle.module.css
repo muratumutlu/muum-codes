@@ -1,4 +1,7 @@
 .title {
+  color: var(--app-text);
+  font-family: var(--app-font-display);
   font-weight: 900;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-5));
+  letter-spacing: 0;
+  line-height: 0.95;
 }

@@ -1,0 +1,42 @@
+.input {
+  min-height: rem(38px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(5px);
+  background: var(--app-surface);
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+}
+
+.input:focus-within {
+  border-color: var(--app-accent);
+}
+
+.dropdown {
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(6px);
+  background: var(--app-surface);
+}
+
+.option {
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
+  font-size: rem(12px);
+  font-weight: 800;
+}
+
+.option[data-combobox-active='true'],
+.option:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
+.pill {
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(4px);
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+  font-family: var(--app-font-mono);
+  font-size: rem(11px);
+  font-weight: 900;
+}

@@ -3,38 +3,20 @@
   overflow: hidden;
   margin: rem(12px) 0 rem(18px);
   padding: rem(26px);
-  border: rem(1px) solid light-dark(#17130d, rgba(248, 245, 231, 0.16));
-  border-radius: rem(8px);
-  background: linear-gradient(
-      90deg,
-      light-dark(#f8f3df, #15130f),
-      transparent 64%
-    ),
-    repeating-linear-gradient(
-      -12deg,
-      transparent 0,
-      transparent rem(18px),
-      light-dark(rgba(250, 112, 90, 0.16), rgba(250, 112, 90, 0.11)) rem(18px),
-      light-dark(rgba(250, 112, 90, 0.16), rgba(250, 112, 90, 0.11)) rem(19px)
-    );
+  border: rem(1px) solid var(--app-border);
+  border-radius: var(--app-radius);
+  background: var(--app-surface-strong);
+  box-shadow: 0 rem(10px) rem(28px) var(--app-shadow);
 }
 
 .console::after {
-  content: '';
-  position: absolute;
-  right: rem(22px);
-  bottom: rem(20px);
-  width: rem(120px);
-  height: rem(120px);
-  border: rem(1px) dashed light-dark(#17130d, rgba(248, 245, 231, 0.22));
-  opacity: 0.2;
-  transform: rotate(-12deg);
+  display: none;
 }
 
 .eyebrow,
 .label {
-  color: light-dark(#5f3b00, #ffd166);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-warn);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
   font-weight: 800;
   letter-spacing: 0;
@@ -43,8 +25,8 @@
 
 .consoleTitle {
   max-width: rem(720px);
-  color: light-dark(#12100d, #f8f5e7);
-  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  color: var(--app-text);
+  font-family: var(--app-font-display);
   font-size: clamp(2rem, 4vw, 4.3rem);
   font-weight: 900;
   line-height: 0.95;
@@ -53,7 +35,7 @@
 
 .consoleCopy {
   max-width: rem(360px);
-  color: light-dark(#4c463a, #c9c2aa);
+  color: var(--app-text-soft);
   font-size: rem(15px);
   line-height: 1.6;
 }
@@ -63,17 +45,71 @@
   margin-bottom: rem(10px);
 }
 
+.helperText {
+  color: var(--app-text-muted);
+  font-family: var(--app-font-mono);
+  font-size: rem(11px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.sectionIcon {
+  color: var(--app-accent);
+}
+
+.searchCard {
+  position: relative;
+  z-index: 1;
+  padding: rem(18px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(6px);
+  background: var(--app-bg-soft);
+  box-shadow: none;
+}
+
+.primaryTerritories {
+  padding-top: rem(4px);
+}
+
+.compactFilterBar {
+  display: grid;
+  grid-template-columns: auto minmax(rem(240px), rem(360px));
+  gap: rem(12px);
+  align-items: center;
+  justify-content: space-between;
+  padding-top: rem(12px);
+  border-top: rem(1px) solid var(--app-border);
+}
+
+.filterDropdown {
+  width: 100%;
+}
+
 .topicButton {
   height: rem(36px);
+  border-color: var(--app-border);
   border-radius: rem(4px);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
+  font-weight: 900;
   letter-spacing: 0;
 }
 
+.topicButton[data-variant='filled'] {
+  background: var(--app-text);
+  color: var(--app-bg-strong);
+}
+
+.topicButton:hover {
+  background: var(--app-accent-soft);
+  color: var(--app-accent);
+}
+
 .resultsTitle {
-  color: light-dark(#12100d, #f8f5e7);
-  font-family: 'Avenir Next', 'Trebuchet MS', Verdana, sans-serif;
+  color: var(--app-text);
+  font-family: var(--app-font-display);
   font-size: clamp(1.4rem, 3vw, 2.6rem);
   line-height: 1.08;
   letter-spacing: 0;
@@ -86,5 +122,13 @@
 
   .consoleCopy {
     max-width: 100%;
+  }
+
+  .searchCard {
+    padding: rem(14px);
+  }
+
+  .compactFilterBar {
+    grid-template-columns: 1fr;
   }
 }

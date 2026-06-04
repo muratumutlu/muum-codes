@@ -31,8 +31,9 @@ const MetaTags: React.FC<MetaTagsProps> = ({
     <Head>
       <title>{pageTitle}</title>
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon.svg" />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" content="#000" />
+      <meta name="theme-color" content="#17130d" />
       <meta name="description" content={pageDescription} />
       <meta name="application-name" content="Muum Repo Explorer" />
       <link rel="canonical" href="https://muum.dev" />

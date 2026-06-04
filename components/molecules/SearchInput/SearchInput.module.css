@@ -1,14 +1,13 @@
 .input {
   width: 100%;
-  border-radius: 0.5rem;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.2s ease-in-out;
 }
 
 .input label {
-  color: light-dark(#12100d, #f8f5e7);
-  font-family: ui-monospace, SFMono-Regular, 'IBM Plex Mono', monospace;
+  color: var(--app-text);
+  font-family: var(--app-font-mono);
   font-size: rem(12px);
   font-weight: 800;
   letter-spacing: 0;
@@ -17,8 +16,19 @@
 
 .input input {
   min-height: rem(54px);
-  border: rem(1px) solid light-dark(#12100d, rgba(248, 245, 231, 0.22));
+  border: rem(1px) solid var(--app-border-strong);
   border-radius: rem(6px);
-  background: light-dark(#fffdf4, rgba(248, 245, 231, 0.05));
+  background: var(--app-surface);
+  color: var(--app-text);
   font-size: rem(18px);
+}
+
+.input input:focus {
+  border-color: var(--app-accent);
+  box-shadow: 0 0 0 rem(2px) color-mix(in srgb, var(--app-accent) 22%, transparent);
+}
+
+.input [data-description] {
+  color: var(--app-text-muted);
+  font-size: rem(13px);
 }

@@ -10,22 +10,23 @@ import { useDispatch } from 'react-redux';
 
 export const useGithubData = (
   searchTerm: SearchTerm,
-  language: string,
+  languages: string[],
   sortBy: SortBy,
   orderBy: OrderBy,
   page: number,
 ) => {
   const dispatch = useDispatch();
+  const languageKey = languages.join(',');
 
   const queryKey = useMemo(
-    () => ['githubSearchRepos', searchTerm, language, sortBy, orderBy, page],
-    [searchTerm, language, sortBy, orderBy, page],
+    () => ['githubSearchRepos', searchTerm, languageKey, sortBy, orderBy, page],
+    [searchTerm, languageKey, sortBy, orderBy, page],
   );
 
   const { data, isError, error, isLoading } = useQuery({
     queryKey,
     queryFn: () =>
-      fetchGithubRepos(searchTerm, language, sortBy, orderBy, page).then(
+      fetchGithubRepos(searchTerm, languages, sortBy, orderBy, page).then(
         (data) => {
           dispatch(setTotalPages(data.totalPages)); // Dispatching the totalPage count here after data is fetched
           return data;
