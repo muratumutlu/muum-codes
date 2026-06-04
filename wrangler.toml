@@ -5,6 +5,7 @@ pages_build_output_dir = "out"
 [[d1_databases]]
 binding = "DB"
 database_name = "muum-repo-explorer"
+database_id = "c1907bf6-aec6-403e-ab2f-5facb6532887"
 migrations_dir = "migrations"
 
 [[r2_buckets]]
