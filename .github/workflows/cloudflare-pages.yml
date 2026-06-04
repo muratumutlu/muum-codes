@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    if: github.repository == 'alimuratumutlu/muum-repo-explorer'
     runs-on: ubuntu-latest
 
     steps:
