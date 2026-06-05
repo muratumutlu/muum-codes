@@ -4,11 +4,10 @@ const themeOverride = createTheme({
   cursorType: 'pointer',
   primaryColor: 'teal',
   defaultRadius: 'sm',
-  fontFamily:
-    'Avenir Next, Trebuchet MS, Verdana, system-ui, -apple-system, sans-serif',
+  fontFamily: 'Share Tech Mono, ui-monospace, monospace',
   headings: {
-    fontFamily: 'Avenir Next, Trebuchet MS, Verdana, sans-serif',
-    fontWeight: '900',
+    fontFamily: 'Pixelify Sans, Share Tech Mono, ui-monospace, monospace',
+    fontWeight: '700',
   },
   defaultGradient: {
     from: 'teal.7',

@@ -104,28 +104,51 @@
 }
 
 .scoreDial {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: rem(6px);
   width: rem(138px);
   aspect-ratio: 1;
   border: rem(1px) solid var(--app-border-strong);
   border-radius: 50%;
-  background: radial-gradient(circle, var(--app-surface) 0 54%, transparent 55%),
-    conic-gradient(
-      var(--app-accent) 0 var(--score-fill),
-      var(--app-border) var(--score-fill) 100%
-    );
+  background: conic-gradient(
+    from -90deg,
+    var(--app-accent) 0 var(--score-fill),
+    rgba(66, 248, 255, 0.16) var(--score-fill) 100%
+  );
+  box-shadow:
+    inset 0 0 rem(18px) rgba(66, 248, 255, 0.08),
+    0 0 rem(18px) rgba(66, 248, 255, 0.12);
+}
+
+.scoreDial::before {
+  content: '';
+  position: absolute;
+  inset: rem(22px);
+  border-radius: 50%;
+  background: var(--app-bg-soft);
+  box-shadow: inset 0 0 rem(24px) rgba(0, 0, 0, 0.24);
 }
 
 .scoreDial span {
+  position: relative;
+  z-index: 1;
   color: var(--app-text);
   font-family: var(--app-font-display);
-  font-size: rem(48px);
-  font-weight: 900;
+  font-size: rem(42px);
+  font-weight: 700;
   line-height: 1;
+  text-shadow:
+    rem(1px) rem(1px) 0 rgba(255, 79, 216, 0.45),
+    0 0 rem(10px) rgba(66, 248, 255, 0.18);
 }
 
 .scoreDial em {
+  position: relative;
+  z-index: 1;
   color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
@@ -273,10 +296,12 @@
 
 .metricValue {
   color: var(--app-text);
-  font-family: var(--app-font-display);
-  font-size: rem(26px);
+  font-family: var(--app-font-mono);
+  font-size: rem(24px);
   font-weight: 900;
+  font-variant-numeric: tabular-nums;
   line-height: 1;
+  text-shadow: 0 0 rem(10px) rgba(66, 248, 255, 0.16);
 }
 
 .metricLabel {

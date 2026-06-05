@@ -4,21 +4,51 @@ import {
   GITHUB_API_SEARCH_URL,
 } from '@/constants/apiURLs';
 import { MAX_PAGE_ITEMS } from '@/constants/magicNumbers';
-import { OrderBy, SearchTerm, SortBy } from '@/types/Filter.types';
+import {
+  FreshnessWindow,
+  OrderBy,
+  SearchTerm,
+  SortBy,
+} from '@/types/Filter.types';
 import type { GithubRepository } from '@/types/GithubRepo.types';
+
+const getFreshnessQualifier = (freshness: FreshnessWindow) => {
+  if (freshness === 'any') return '';
+
+  const days = Number.parseInt(freshness, 10);
+  const date = new Date();
+  date.setDate(date.getDate() - days);
+
+  return `pushed:>=${date.toISOString().slice(0, 10)}`;
+};
 
 export const fetchGithubRepos = async (
   searchTerm: SearchTerm,
   languages: string[],
   sortBy: SortBy,
   orderBy: OrderBy,
+  minStars = 0,
+  freshness: FreshnessWindow = 'any',
   page = 1,
 ) => {
   const activeLanguages = languages.length > 0 ? languages : [''];
+  const githubSort =
+    sortBy === 'signal'
+      ? 'stars'
+      : sortBy === 'lastUpdate'
+        ? 'updated'
+        : sortBy;
+  const starQualifier = minStars > 0 ? `stars:>=${minStars}` : '';
+  const freshnessQualifier = getFreshnessQualifier(freshness);
 
   const buildQuery = (language: string) =>
     encodeURIComponent(
-      [searchTerm, language && `language:${language}`]
+      [
+        searchTerm,
+        language && `language:${language}`,
+        starQualifier,
+        freshnessQualifier,
+      ]
         .filter(Boolean)
         .join(' ') || 'stars:>0',
     );
@@ -26,7 +56,7 @@ export const fetchGithubRepos = async (
   const responses = await Promise.all(
     activeLanguages.map((language) =>
       fetch(
-        `${GITHUB_API_SEARCH_URL}?q=${buildQuery(language)}&sort=${sortBy}&order=${orderBy}&page=${page}&per_page=${MAX_PAGE_ITEMS}`,
+        `${GITHUB_API_SEARCH_URL}?q=${buildQuery(language)}&sort=${githubSort}&order=${orderBy}&page=${page}&per_page=${MAX_PAGE_ITEMS}`,
       ),
     ),
   );

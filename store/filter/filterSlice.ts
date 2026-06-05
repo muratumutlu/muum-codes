@@ -1,6 +1,12 @@
 /* eslint-disable import/order */
 /* eslint-disable no-param-reassign */
-import { FilterState, OrderBy, SortBy } from '@/types/Filter.types';
+import {
+  FilterState,
+  FreshnessWindow,
+  OrderBy,
+  SignalFilterKey,
+  SortBy,
+} from '@/types/Filter.types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState: FilterState = {
@@ -8,6 +14,9 @@ const initialState: FilterState = {
   searchTerm: '',
   sortBy: 'stars',
   orderBy: 'desc',
+  minStars: 0,
+  freshness: 'any',
+  signalFilters: [],
   currentPage: 1,
   totalPages: 0,
 };
@@ -28,6 +37,15 @@ export const filterSlice = createSlice({
     setOrderBy: (state, action: PayloadAction<OrderBy>) => {
       state.orderBy = action.payload;
     },
+    setMinStars: (state, action: PayloadAction<number>) => {
+      state.minStars = action.payload;
+    },
+    setFreshness: (state, action: PayloadAction<FreshnessWindow>) => {
+      state.freshness = action.payload;
+    },
+    setSignalFilters: (state, action: PayloadAction<SignalFilterKey[]>) => {
+      state.signalFilters = action.payload;
+    },
     setCurrentPage: (state, action: PayloadAction<number>) => {
       state.currentPage = action.payload;
     },
@@ -39,6 +57,9 @@ export const filterSlice = createSlice({
       state.searchTerm = '';
       state.sortBy = 'lastUpdate';
       state.orderBy = 'desc';
+      state.minStars = 0;
+      state.freshness = 'any';
+      state.signalFilters = [];
       state.currentPage = 1;
     },
   },
@@ -49,6 +70,9 @@ export const {
   setSearchTerm,
   setSortBy,
   setOrderBy,
+  setMinStars,
+  setFreshness,
+  setSignalFilters,
   setCurrentPage,
   setTotalPages,
   resetAll,

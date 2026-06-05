@@ -1,28 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
 :root {
-  --app-font-display: 'Avenir Next', 'Trebuchet MS', verdana, sans-serif;
-  --app-font-mono: ui-monospace, sfmono-regular, 'IBM Plex Mono', monospace;
-  --app-bg: #fff;
-  --app-bg-strong: #fff;
-  --app-bg-soft: #f7f9f8;
-  --app-text: #121615;
-  --app-text-soft: #46504d;
-  --app-text-muted: #78827e;
-  --app-border: rgba(18, 22, 21, 0.11);
-  --app-border-strong: rgba(18, 22, 21, 0.28);
-  --app-accent: #0f766e;
-  --app-accent-strong: #0b5f59;
-  --app-accent-soft: #e8f7f4;
-  --app-warn: #7c5a12;
-  --app-warn-soft: #fff4cf;
-  --app-grid-line: rgba(18, 22, 21, 0.035);
-  --app-surface: #fff;
-  --app-surface-strong: #fff;
-  --app-surface-muted: #f6f8f7;
-  --app-shadow: rgba(18, 22, 21, 0.06);
+  --app-font-display: 'Pixelify Sans', ui-monospace, monospace;
+  --app-font-mono: 'Share Tech Mono', ui-monospace, monospace;
+  --app-bg: #060915;
+  --app-bg-strong: #03050d;
+  --app-bg-soft: #0c1124;
+  --app-text: #f8fbff;
+  --app-text-soft: #bfcee7;
+  --app-text-muted: #7585aa;
+  --app-border: rgba(106, 247, 255, 0.2);
+  --app-border-strong: rgba(106, 247, 255, 0.46);
+  --app-accent: #42f8ff;
+  --app-accent-strong: #16cbd5;
+  --app-accent-soft: rgba(66, 248, 255, 0.12);
+  --app-coral: #ff4fd8;
+  --app-coral-soft: rgba(255, 79, 216, 0.13);
+  --app-sky: #6d7cff;
+  --app-sky-soft: rgba(109, 124, 255, 0.13);
+  --app-lime: #c9ff3d;
+  --app-lime-soft: rgba(201, 255, 61, 0.12);
+  --app-warn: #ffd166;
+  --app-warn-soft: rgba(255, 209, 102, 0.12);
+  --app-grid-line: rgba(106, 247, 255, 0.07);
+  --app-surface: rgba(10, 17, 36, 0.86);
+  --app-surface-strong: rgba(9, 14, 32, 0.95);
+  --app-surface-muted: rgba(15, 24, 50, 0.74);
+  --app-shadow: rgba(0, 0, 0, 0.5);
   --app-radius: 8px;
   --app-radius-sm: 5px;
-  --app-page-pattern: linear-gradient(180deg, #fff 0, #f8faf9 100%);
-  --app-band: rgba(255, 255, 255, 0.92);
+  --app-page-pattern: radial-gradient(
+      circle at 12% 8%,
+      rgba(255, 79, 216, 0.18),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(66, 248, 255, 0.2),
+      transparent 24rem
+    ),
+    linear-gradient(rgba(106, 247, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(106, 247, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #050815 0, #0b1022 48%, #060713 100%);
+  --app-band: rgba(5, 9, 21, 0.84);
+  --app-glow-cyan: 0 0 18px rgba(66, 248, 255, 0.24);
+  --app-glow-magenta: 0 0 22px rgba(255, 79, 216, 0.22);
 }
 
 [data-mantine-color-scheme='dark'] {
@@ -37,6 +59,12 @@
   --app-accent: #9ae6b4;
   --app-accent-strong: #6ed49b;
   --app-accent-soft: rgba(154, 230, 180, 0.12);
+  --app-coral: #ff8a7c;
+  --app-coral-soft: rgba(255, 138, 124, 0.13);
+  --app-sky: #8ab4ff;
+  --app-sky-soft: rgba(138, 180, 255, 0.12);
+  --app-lime: #d6ff72;
+  --app-lime-soft: rgba(214, 255, 114, 0.12);
   --app-warn: #ffd166;
   --app-warn-soft: rgba(255, 209, 102, 0.12);
   --app-grid-line: rgba(248, 245, 231, 0.07);
@@ -53,14 +81,46 @@
 }
 
 html {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100%;
   min-width: 320px;
   margin: 0;
   background: var(--app-page-pattern);
+  background-size:
+    auto,
+    auto,
+    42px 42px,
+    42px 42px,
+    auto;
   color: var(--app-text);
+  font-family: var(--app-font-mono);
+}
+
+#__next {
+  min-height: 100%;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.035) 50%,
+      rgba(0, 0, 0, 0.035) 50%
+    ),
+    linear-gradient(90deg, rgba(255, 79, 216, 0.035), rgba(66, 248, 255, 0.02));
+  background-size:
+    100% 4px,
+    auto;
+  mix-blend-mode: screen;
 }
 
 body,
@@ -68,5 +128,6 @@ button,
 input,
 textarea,
 select {
+  font-family: var(--app-font-mono);
   letter-spacing: 0;
 }

@@ -10,7 +10,7 @@ export default function HomeTemplate({ children }: HomeTemplateProps) {
   return (
     <>
       <MetaTags type="homepage" />
-      <Container size="xl">{children}</Container>
+      <Container size={1536}>{children}</Container>
       <Footer />
     </>
   );

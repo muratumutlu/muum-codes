@@ -3,15 +3,19 @@
   border: rem(1px) solid var(--app-border);
   border-radius: rem(4px);
   color: var(--app-text-muted);
+  background: rgba(3, 7, 16, 0.64);
 }
 
 .saveButton:hover {
-  background: var(--app-accent-soft);
-  color: var(--app-accent);
+  border-color: var(--app-lime);
+  background: var(--app-coral-soft);
+  color: var(--app-text);
+  box-shadow: var(--app-glow-magenta);
 }
 
 .saveButtonActive {
   border-color: var(--app-accent);
-  background: var(--app-accent);
+  background: linear-gradient(135deg, var(--app-accent), var(--app-coral));
   color: var(--app-bg-strong);
+  box-shadow: var(--app-glow-cyan);
 }

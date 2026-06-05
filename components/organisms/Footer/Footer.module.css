@@ -54,8 +54,9 @@
   padding: rem(18px);
   border: rem(1px) solid var(--app-border);
   border-radius: var(--app-radius);
-  background: var(--app-surface);
+  background: rgba(4, 8, 18, 0.76);
   color: var(--app-text);
+  box-shadow: inset 0 0 rem(28px) rgba(66, 248, 255, 0.04);
 }
 
 .signal svg {
@@ -98,7 +99,7 @@
 .socialButton {
   border-color: var(--app-border-strong);
   color: var(--app-text);
-  background: var(--app-surface);
+  background: rgba(3, 7, 16, 0.68);
 }
 
 .socialButton:hover {
@@ -115,11 +116,11 @@
   padding: 0 rem(12px);
   border: rem(1px) solid var(--app-border);
   border-radius: rem(7px);
-  background: var(--app-surface);
+  background: rgba(3, 7, 16, 0.68);
 }
 
 .themeLabel {
-  color: var(--app-warn);
+  color: var(--app-lime);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
   font-weight: 800;

@@ -27,19 +27,7 @@ export default function CloudflareReadiness() {
   }
 
   if (isError || !data) {
-    return (
-      <Paper component="section" className={classes.panel}>
-        <Group justify="space-between" gap="md" className={classes.content}>
-          <Stack gap={2}>
-            <Text className={classes.title}>Workspace backend</Text>
-            <Text className={classes.description}>
-              Cloudflare Functions inactive
-            </Text>
-          </Stack>
-          <StatusBadge active={false} label="Pages Functions" />
-        </Group>
-      </Paper>
-    );
+    return null;
   }
 
   return (

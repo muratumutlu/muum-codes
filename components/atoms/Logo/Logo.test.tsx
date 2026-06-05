@@ -10,8 +10,6 @@ describe('Logo', () => {
       </MantineProvider>,
     );
 
-    expect(
-      await screen.findByAltText('Muum Repo Explorer'),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'muum' })).toBeInTheDocument();
   });
 });

@@ -1,102 +1,84 @@
+.rank {
+  width: rem(44px);
+  min-width: rem(44px);
+  text-align: center;
+}
+
 .action {
-  width: 6%;
-  min-width: 64px;
+  width: rem(64px);
+  min-width: rem(64px);
 }
 
-.signal {
-  width: 10%;
-  min-width: 98px;
-  border-top-left-radius: rem(8px);
-
-  @media (max-width: 768px) {
-    width: 35vw;
-  }
-}
-
-.signalBadge {
-  display: grid;
-  gap: rem(2px);
-  width: rem(72px);
-  padding: rem(6px) rem(8px);
-  border: rem(1px) solid var(--app-border);
-  border-radius: rem(5px);
-  background: var(--app-accent-soft);
-}
-
-.signalBadge span {
-  color: var(--app-text);
-  font-family: var(--app-font-display);
-  font-size: rem(20px);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.signalBadge em {
-  color: var(--app-accent);
-  font-family: var(--app-font-mono);
-  font-size: rem(9px);
-  font-style: normal;
-  font-weight: 900;
-  letter-spacing: 0;
-  text-transform: uppercase;
+.repository {
+  width: 23%;
+  min-width: rem(220px);
 }
 
 .description {
-  width: 45%;
-
-  @media (max-width: 768px) {
-    width: 45vw;
-  }
+  width: 31%;
+  min-width: rem(280px);
 }
 
-.username {
-  width: 15%;
+.signal {
+  width: rem(168px);
+  min-width: rem(168px);
+  cursor: pointer;
+}
 
-  @media (max-width: 768px) {
-    width: 45vw;
-  }
+.stars,
+.forks,
+.language,
+.lastUpdate {
+  width: rem(96px);
+  min-width: rem(88px);
 }
 
 .stars,
 .forks,
 .lastUpdate {
-  min-width: 80px;
-  width: 10%;
   cursor: pointer;
-
-  @media (max-width: 768px) {
-    width: 25vw;
-  }
-}
-
-.lastUpdate {
-  border-top-right-radius: rem(8px);
 }
 
 .tableContainer {
   overflow-x: auto;
-  border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
-  background: var(--app-surface);
-
-  @media (min-width: 768px) {
-    width: 100%;
-  }
+  border: rem(1px) solid rgba(66, 248, 255, 0.38);
+  border-radius: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(3, 8, 18, 0.94),
+      rgba(5, 11, 24, 0.96)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(66, 248, 255, 0.025) 0 rem(1px),
+      transparent rem(1px) rem(28px)
+    );
+  box-shadow:
+    inset 0 0 rem(38px) rgba(66, 248, 255, 0.06),
+    0 0 rem(22px) rgba(66, 248, 255, 0.08);
 }
 
 .table {
-  min-width: rem(920px);
+  width: 100%;
+  min-width: rem(1120px);
+  border-collapse: collapse;
   color: var(--app-text);
+  font-family: var(--app-font-mono);
 }
 
 .tableHead {
-  background: var(--app-band);
+  background: rgba(4, 10, 22, 0.98);
 }
 
 .headerCell {
-  height: rem(48px);
-  border-color: var(--app-border);
-  color: var(--app-warn);
+  height: rem(44px);
+  border-color: rgba(66, 248, 255, 0.38);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 18, 38, 0.96),
+    rgba(4, 9, 21, 0.98)
+  );
+  color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
   font-weight: 900;
@@ -106,9 +88,11 @@
 }
 
 .cell {
-  border-color: var(--app-border);
+  height: rem(64px);
+  border-color: rgba(66, 248, 255, 0.34);
   color: var(--app-text-soft);
-  font-size: rem(14px);
+  font-size: rem(13px);
+  line-height: 1.45;
   vertical-align: middle;
 }
 
@@ -116,23 +100,129 @@
   cursor: pointer;
   transition:
     background-color 140ms ease,
-    color 140ms ease;
+    color 140ms ease,
+    transform 140ms ease;
 }
 
 .row:nth-of-type(odd) {
-  background: color-mix(in srgb, var(--app-surface) 82%, transparent);
+  background: rgba(4, 9, 21, 0.92);
 }
 
 .row:nth-of-type(even) {
-  background: color-mix(in srgb, var(--app-surface-muted) 74%, transparent);
+  background: rgba(9, 16, 34, 0.88);
 }
 
 .row:hover {
-  background: var(--app-accent-soft) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(66, 248, 255, 0.14),
+    rgba(255, 79, 216, 0.1)
+  ) !important;
+  transform: translateX(rem(2px));
 }
 
 .row:hover .cell {
   color: var(--app-text);
+}
+
+.rank.cell {
+  color: var(--app-text);
+  font-family: var(--app-font-display);
+  font-size: rem(22px);
+  font-weight: 700;
+}
+
+.repoIdentity {
+  display: grid;
+  grid-template-columns: rem(24px) minmax(0, 1fr) auto;
+  gap: rem(10px);
+  align-items: center;
+  min-width: 0;
+}
+
+.repoIdentity strong {
+  display: block;
+  overflow: hidden;
+  color: var(--app-lime);
+  font-size: rem(13px);
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 0 rem(14px) rgba(201, 255, 61, 0.2);
+}
+
+.repoIdentity span {
+  display: block;
+  overflow: hidden;
+  color: var(--app-text-muted);
+  font-size: rem(11px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repoFlag,
+.languageBadge {
+  height: rem(22px);
+  border-radius: rem(2px);
+  font-family: var(--app-font-mono);
+  font-size: rem(9px);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.repoFlag {
+  border-color: var(--app-lime);
+  background: rgba(201, 255, 61, 0.11);
+  color: var(--app-lime);
+}
+
+.signalScore {
+  display: grid;
+  grid-template-columns: rem(46px) minmax(rem(66px), 1fr);
+  gap: rem(10px);
+  align-items: center;
+}
+
+.signalScore strong {
+  color: var(--app-lime);
+  font-family: var(--app-font-display);
+  font-size: rem(34px);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow:
+    0 0 rem(12px) rgba(201, 255, 61, 0.52),
+    rem(1px) rem(1px) 0 rgba(255, 79, 216, 0.35);
+}
+
+.signalScore svg {
+  width: rem(76px);
+  height: rem(36px);
+  overflow: visible;
+  border-left: rem(1px) dotted rgba(66, 248, 255, 0.28);
+  background: linear-gradient(180deg, transparent, rgba(201, 255, 61, 0.16));
+}
+
+.signalScore polyline {
+  fill: none;
+  stroke: var(--app-lime);
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: rem(2px);
+  filter: drop-shadow(0 0 rem(5px) rgba(201, 255, 61, 0.65));
+}
+
+.stars.cell,
+.forks.cell {
+  color: var(--app-text);
+  font-size: rem(14px);
+  font-weight: 800;
+}
+
+.languageBadge {
+  border-color: var(--app-accent);
+  background: rgba(66, 248, 255, 0.11);
+  color: var(--app-accent);
 }
 
 .caption {
@@ -143,15 +233,25 @@
 }
 
 .pagination {
-  --pagination-active-bg: var(--app-text);
+  --pagination-active-bg: var(--app-lime);
   --pagination-active-color: var(--app-bg-strong);
 }
 
 .paginationControl {
-  border-color: var(--app-border);
-  border-radius: rem(4px);
-  background: var(--app-surface);
+  border-color: rgba(66, 248, 255, 0.34);
+  border-radius: 0;
+  background: rgba(3, 7, 16, 0.84);
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
+}
+
+@media (max-width: 768px) {
+  .repository {
+    min-width: rem(240px);
+  }
+
+  .description {
+    min-width: rem(280px);
+  }
 }
