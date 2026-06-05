@@ -1,7 +1,7 @@
 .link {
   display: inline-flex;
   align-items: center;
-  min-width: rem(92px);
+  min-width: rem(88px);
   color: var(--app-text);
   text-decoration: none;
   cursor: pointer;
@@ -11,32 +11,28 @@
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: rem(92px);
-  height: rem(34px);
-  border: rem(1px) solid rgba(255, 79, 216, 0.62);
-  border-radius: 0;
-  background: rgba(4, 8, 18, 0.74);
-  box-shadow:
-    inset 0 0 rem(18px) rgba(255, 79, 216, 0.08),
-    var(--app-glow-magenta);
+  width: rem(88px);
+  height: rem(36px);
+  border: rem(1px) solid var(--app-border);
+  border-radius: rem(999px);
+  background: #fff;
+  box-shadow: 0 rem(10px) rem(30px) rgba(15, 23, 42, 0.08);
 }
 
 .pixelMark {
   color: var(--app-text);
   font-family: var(--app-font-display);
-  font-size: rem(25px);
-  font-weight: 700;
-  letter-spacing: rem(1px);
+  font-size: rem(18px);
+  font-weight: 800;
+  letter-spacing: 0;
   line-height: 1;
   text-transform: lowercase;
-  text-shadow:
-    rem(1px) 0 0 var(--app-accent),
-    0 0 rem(14px) rgba(66, 248, 255, 0.42);
+  text-shadow: none;
 }
 
 .link:hover .mark {
   border-color: var(--app-accent);
-  box-shadow: var(--app-glow-cyan);
+  box-shadow: 0 rem(12px) rem(32px) rgba(37, 99, 235, 0.14);
 }
 
 @media (max-width: 420px) {

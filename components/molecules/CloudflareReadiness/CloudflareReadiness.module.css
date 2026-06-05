@@ -4,13 +4,8 @@
   border: rem(1px) solid
     color-mix(in srgb, var(--app-lime) 40%, var(--app-border));
   border-radius: var(--app-radius);
-  background: linear-gradient(
-      90deg,
-      rgba(201, 255, 61, 0.13),
-      rgba(66, 248, 255, 0.08)
-    ),
-    rgba(4, 8, 18, 0.82);
-  box-shadow: inset 0 0 rem(28px) rgba(201, 255, 61, 0.05);
+  background: #fff;
+  box-shadow: 0 rem(12px) rem(32px) rgba(15, 23, 42, 0.05);
 }
 
 .panel {
@@ -25,10 +20,10 @@
 }
 
 .title {
-  color: var(--app-lime);
+  color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -44,13 +39,13 @@
   border-radius: rem(4px);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
 .statusActive {
   border-color: var(--app-accent);
-  background: rgba(66, 248, 255, 0.13);
+  background: var(--app-accent-soft);
   color: var(--app-accent);
 }
 

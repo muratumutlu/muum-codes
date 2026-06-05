@@ -2,16 +2,18 @@ import { DEFAULT_THEME, createTheme, mergeMantineTheme } from '@mantine/core';
 
 const themeOverride = createTheme({
   cursorType: 'pointer',
-  primaryColor: 'teal',
+  primaryColor: 'blue',
   defaultRadius: 'sm',
-  fontFamily: 'Share Tech Mono, ui-monospace, monospace',
+  fontFamily:
+    '-apple-system, BlinkMacSystemFont, SF Pro Text, Helvetica Neue, Arial, sans-serif',
   headings: {
-    fontFamily: 'Pixelify Sans, Share Tech Mono, ui-monospace, monospace',
-    fontWeight: '700',
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, SF Pro Display, Helvetica Neue, Arial, sans-serif',
+    fontWeight: '750',
   },
   defaultGradient: {
-    from: 'teal.7',
-    to: 'lime.4',
+    from: 'blue.6',
+    to: 'indigo.5',
     deg: 90,
   },
   components: {

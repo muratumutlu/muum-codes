@@ -1,50 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
-
 :root {
-  --app-font-display: 'Pixelify Sans', ui-monospace, monospace;
-  --app-font-mono: 'Share Tech Mono', ui-monospace, monospace;
-  --app-bg: #060915;
-  --app-bg-strong: #03050d;
-  --app-bg-soft: #0c1124;
-  --app-text: #f8fbff;
-  --app-text-soft: #bfcee7;
-  --app-text-muted: #7585aa;
-  --app-border: rgba(106, 247, 255, 0.2);
-  --app-border-strong: rgba(106, 247, 255, 0.46);
-  --app-accent: #42f8ff;
-  --app-accent-strong: #16cbd5;
-  --app-accent-soft: rgba(66, 248, 255, 0.12);
-  --app-coral: #ff4fd8;
-  --app-coral-soft: rgba(255, 79, 216, 0.13);
-  --app-sky: #6d7cff;
-  --app-sky-soft: rgba(109, 124, 255, 0.13);
-  --app-lime: #c9ff3d;
-  --app-lime-soft: rgba(201, 255, 61, 0.12);
-  --app-warn: #ffd166;
-  --app-warn-soft: rgba(255, 209, 102, 0.12);
-  --app-grid-line: rgba(106, 247, 255, 0.07);
-  --app-surface: rgba(10, 17, 36, 0.86);
-  --app-surface-strong: rgba(9, 14, 32, 0.95);
-  --app-surface-muted: rgba(15, 24, 50, 0.74);
-  --app-shadow: rgba(0, 0, 0, 0.5);
-  --app-radius: 8px;
-  --app-radius-sm: 5px;
-  --app-page-pattern: radial-gradient(
-      circle at 12% 8%,
-      rgba(255, 79, 216, 0.18),
-      transparent 28rem
-    ),
-    radial-gradient(
-      circle at 85% 0%,
-      rgba(66, 248, 255, 0.2),
-      transparent 24rem
-    ),
-    linear-gradient(rgba(106, 247, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(106, 247, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, #050815 0, #0b1022 48%, #060713 100%);
-  --app-band: rgba(5, 9, 21, 0.84);
-  --app-glow-cyan: 0 0 18px rgba(66, 248, 255, 0.24);
-  --app-glow-magenta: 0 0 22px rgba(255, 79, 216, 0.22);
+  --app-font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+    'Helvetica Neue', Arial, sans-serif;
+  --app-font-mono: -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'Helvetica Neue', Arial, sans-serif;
+  --app-bg: #f6f7fb;
+  --app-bg-strong: #ffffff;
+  --app-bg-soft: #f0f2f7;
+  --app-text: #111827;
+  --app-text-soft: #344054;
+  --app-text-muted: #667085;
+  --app-border: rgba(15, 23, 42, 0.09);
+  --app-border-strong: rgba(15, 23, 42, 0.16);
+  --app-accent: #2563eb;
+  --app-accent-strong: #1d4ed8;
+  --app-accent-soft: rgba(37, 99, 235, 0.08);
+  --app-coral: #7c3aed;
+  --app-coral-soft: rgba(124, 58, 237, 0.08);
+  --app-sky: #0284c7;
+  --app-sky-soft: rgba(2, 132, 199, 0.08);
+  --app-lime: #059669;
+  --app-lime-soft: rgba(5, 150, 105, 0.09);
+  --app-warn: #b45309;
+  --app-warn-soft: rgba(180, 83, 9, 0.08);
+  --app-grid-line: rgba(15, 23, 42, 0.04);
+  --app-surface: rgba(255, 255, 255, 0.82);
+  --app-surface-strong: #ffffff;
+  --app-surface-muted: #f8fafc;
+  --app-shadow: rgba(15, 23, 42, 0.08);
+  --app-radius: 12px;
+  --app-radius-sm: 10px;
+  --app-page-pattern: linear-gradient(180deg, #ffffff 0, #f6f7fb 44rem);
+  --app-band: rgba(255, 255, 255, 0.78);
+  --app-glow-cyan: 0 18px 50px rgba(37, 99, 235, 0.1);
+  --app-glow-magenta: 0 18px 50px rgba(15, 23, 42, 0.08);
 }
 
 [data-mantine-color-scheme='dark'] {
@@ -92,12 +80,7 @@ body {
   min-width: 320px;
   margin: 0;
   background: var(--app-page-pattern);
-  background-size:
-    auto,
-    auto,
-    42px 42px,
-    42px 42px,
-    auto;
+  background-size: auto;
   color: var(--app-text);
   font-family: var(--app-font-mono);
 }
@@ -107,20 +90,7 @@ body {
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.035) 50%,
-      rgba(0, 0, 0, 0.035) 50%
-    ),
-    linear-gradient(90deg, rgba(255, 79, 216, 0.035), rgba(66, 248, 255, 0.02));
-  background-size:
-    100% 4px,
-    auto;
-  mix-blend-mode: screen;
+  display: none;
 }
 
 body,

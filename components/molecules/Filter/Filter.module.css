@@ -1,8 +1,8 @@
 .input {
   min-height: rem(38px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(5px);
-  background: rgba(3, 7, 16, 0.74) !important;
+  border-radius: rem(12px);
+  background: #fff !important;
   color: var(--app-text) !important;
   font-family: var(--app-font-mono);
   font-size: rem(12px);
@@ -19,12 +19,13 @@
 
 .input:focus-within {
   border-color: var(--app-accent);
-  box-shadow: var(--app-glow-cyan);
+  box-shadow: 0 0 0 rem(3px)
+    color-mix(in srgb, var(--app-accent) 14%, transparent);
 }
 
 .dropdown {
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
+  border-radius: rem(14px);
   background: var(--app-surface-strong);
 }
 
@@ -32,22 +33,22 @@
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 800;
+  font-weight: 650;
 }
 
 .option[data-combobox-active='true'],
 .option:hover {
-  background: var(--app-coral-soft);
+  background: var(--app-accent-soft);
   color: var(--app-text);
 }
 
 .pill {
   border: rem(1px) solid
     color-mix(in srgb, var(--app-accent) 46%, var(--app-border));
-  border-radius: rem(4px);
-  background: rgba(66, 248, 255, 0.14) !important;
+  border-radius: rem(999px);
+  background: var(--app-accent-soft) !important;
   color: var(--app-accent) !important;
   font-family: var(--app-font-mono);
   font-size: rem(11px);
-  font-weight: 900;
+  font-weight: 700;
 }

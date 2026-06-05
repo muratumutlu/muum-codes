@@ -8,10 +8,10 @@
   min-height: rem(34px);
   padding: 0 rem(12px);
   border: 0;
-  border-radius: rem(4px);
+  border-radius: rem(999px);
   font-family: var(--app-font-mono);
-  font-size: rem(12px);
-  font-weight: 900;
+  font-size: rem(13px);
+  font-weight: 700;
   letter-spacing: 0;
   cursor: pointer;
 }
@@ -25,7 +25,7 @@
 .offBadge {
   height: rem(28px);
   border-color: var(--app-border);
-  background: rgba(3, 7, 16, 0.68);
+  background: var(--app-surface-muted);
   color: var(--app-text-muted);
 }
 
@@ -35,19 +35,19 @@
 }
 
 .secondaryButton:hover {
-  background: rgba(66, 248, 255, 0.12);
+  background: var(--app-accent-soft);
   color: var(--app-text);
-  box-shadow: var(--app-glow-cyan);
+  box-shadow: none;
 }
 
 .primaryButton {
   border: rem(1px) solid var(--app-border-strong);
-  background: linear-gradient(135deg, var(--app-accent), var(--app-coral));
-  color: var(--app-bg-strong);
-  box-shadow: var(--app-glow-cyan);
+  background: var(--app-text);
+  color: #fff;
+  box-shadow: 0 rem(12px) rem(28px) rgba(15, 23, 42, 0.14);
 }
 
 .primaryButton:hover {
-  background: linear-gradient(135deg, var(--app-lime), var(--app-accent));
-  color: var(--app-bg-strong);
+  background: var(--app-accent);
+  color: #fff;
 }

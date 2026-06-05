@@ -15,7 +15,9 @@ function Hero() {
           </Group>
 
           <Title className={classes.title}>
-            <span className={classes.titleLine}>Find the repos that</span>
+            <span className={classes.titleLine}>
+              Find the repositories that{' '}
+            </span>
             <span className={classes.titleLine}>
               power tomorrow&apos;s{' '}
               <span className={classes.accent}>agents</span>

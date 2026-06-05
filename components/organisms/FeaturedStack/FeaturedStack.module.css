@@ -4,20 +4,9 @@
   margin: rem(12px) 0 rem(18px);
   padding: rem(24px);
   border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
-  background: linear-gradient(
-      180deg,
-      rgba(10, 17, 36, 0.92),
-      rgba(4, 8, 18, 0.9)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(66, 248, 255, 0.035) 0 1px,
-      transparent 1px 28px
-    );
-  box-shadow:
-    0 rem(8px) rem(24px) var(--app-shadow),
-    inset 0 0 rem(36px) rgba(66, 248, 255, 0.05);
+  border-radius: rem(24px);
+  background: #fff;
+  box-shadow: 0 rem(24px) rem(70px) rgba(15, 23, 42, 0.08);
 }
 
 .section::after {
@@ -30,10 +19,10 @@
 
 .eyebrow,
 .metaLabel {
-  color: var(--app-lime);
+  color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -43,7 +32,7 @@
   color: var(--app-text);
   font-family: var(--app-font-display);
   font-size: clamp(1.8rem, 4vw, 4rem);
-  font-weight: 900;
+  font-weight: 780;
   line-height: 0.96;
   letter-spacing: 0;
 }
@@ -62,12 +51,12 @@
   width: fit-content;
   height: rem(36px);
   border: rem(1px) solid var(--app-border-strong);
-  border-radius: rem(4px);
-  background: linear-gradient(135deg, var(--app-accent), var(--app-coral));
-  color: var(--app-bg-strong);
+  border-radius: rem(999px);
+  background: var(--app-text);
+  color: #fff;
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -79,8 +68,8 @@
   min-height: rem(230px);
   padding: rem(16px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
-  background: rgba(3, 7, 16, 0.72);
+  border-radius: rem(18px);
+  background: var(--app-surface-muted);
   box-shadow: none;
 }
 
@@ -90,18 +79,18 @@
   width: rem(38px);
   height: rem(38px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(5px);
-  background: rgba(66, 248, 255, 0.12);
+  border-radius: rem(12px);
+  background: var(--app-accent-soft);
   color: var(--app-accent);
 }
 
 .category {
   height: rem(28px);
   border-color: var(--app-border);
-  color: var(--app-lime);
+  color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(10px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -109,7 +98,7 @@
   color: var(--app-text);
   font-family: var(--app-font-display);
   font-size: rem(28px);
-  font-weight: 900;
+  font-weight: 760;
   line-height: 1;
   letter-spacing: 0;
 }
@@ -125,11 +114,11 @@
   padding: rem(5px) rem(8px);
   border: rem(1px) solid var(--app-border);
   border-radius: rem(4px);
-  background: rgba(66, 248, 255, 0.08);
+  background: #fff;
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(10px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -141,7 +130,7 @@
   padding: rem(10px);
   border: rem(1px) solid var(--app-border);
   border-radius: rem(5px);
-  background: rgba(3, 7, 16, 0.62);
+  background: #fff;
 }
 
 .metaLabel {
@@ -153,7 +142,7 @@
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -161,7 +150,7 @@
   color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }

@@ -5,21 +5,10 @@
   height: auto;
   overflow: hidden;
   border: rem(1px) solid
-    color-mix(in srgb, var(--app-accent) 36%, var(--app-border));
+    color-mix(in srgb, var(--app-accent) 18%, var(--app-border));
   border-radius: var(--app-radius);
-  background: linear-gradient(
-      180deg,
-      rgba(10, 17, 36, 0.9),
-      rgba(4, 8, 18, 0.92)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(66, 248, 255, 0.035) 0 1px,
-      transparent 1px 26px
-    );
-  box-shadow:
-    inset 0 0 rem(32px) rgba(66, 248, 255, 0.045),
-    0 rem(10px) rem(34px) var(--app-shadow);
+  background: #fff;
+  box-shadow: 0 rem(16px) rem(44px) rgba(15, 23, 42, 0.07);
 }
 
 .title {

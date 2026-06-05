@@ -8,19 +8,19 @@
   overflow: hidden;
   padding: rem(24px);
   border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
+  border-radius: rem(24px);
   background: var(--app-surface-strong);
-  box-shadow: 0 rem(8px) rem(24px) var(--app-shadow);
+  box-shadow: 0 rem(24px) rem(70px) rgba(15, 23, 42, 0.08);
 }
 
 .backButton,
 .githubButton,
 .homepageButton {
   height: rem(36px);
-  border-radius: rem(4px);
+  border-radius: rem(999px);
   font-family: var(--app-font-mono);
-  font-size: rem(12px);
-  font-weight: 900;
+  font-size: rem(13px);
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -31,7 +31,7 @@
 .githubButton {
   border: rem(1px) solid var(--app-border-strong);
   background: var(--app-text);
-  color: var(--app-bg-strong);
+  color: #fff;
 }
 
 .homepageButton {
@@ -44,7 +44,7 @@
   color: var(--app-warn);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -52,10 +52,10 @@
 .title {
   color: var(--app-text);
   font-family: var(--app-font-display);
-  font-size: clamp(2.3rem, 6vw, 5.3rem);
-  font-weight: 900;
-  line-height: 0.88;
-  letter-spacing: 0;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 780;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
   word-break: break-word;
 }
 
@@ -70,7 +70,7 @@
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -79,7 +79,7 @@
   height: 100%;
   padding: rem(18px);
   border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
+  border-radius: rem(18px);
   background: var(--app-surface);
   box-shadow: none;
 }
@@ -87,7 +87,7 @@
 .signalPanel {
   padding: rem(18px);
   border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
+  border-radius: rem(18px);
   background: var(--app-surface);
   box-shadow: none;
 }
@@ -99,8 +99,8 @@
   height: 100%;
   padding: rem(18px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
-  background: var(--app-surface-strong);
+  border-radius: rem(16px);
+  background: var(--app-surface-muted);
 }
 
 .scoreDial {
@@ -117,11 +117,9 @@
   background: conic-gradient(
     from -90deg,
     var(--app-accent) 0 var(--score-fill),
-    rgba(66, 248, 255, 0.16) var(--score-fill) 100%
+    rgba(37, 99, 235, 0.12) var(--score-fill) 100%
   );
-  box-shadow:
-    inset 0 0 rem(18px) rgba(66, 248, 255, 0.08),
-    0 0 rem(18px) rgba(66, 248, 255, 0.12);
+  box-shadow: 0 rem(18px) rem(40px) rgba(37, 99, 235, 0.12);
 }
 
 .scoreDial::before {
@@ -130,7 +128,7 @@
   inset: rem(22px);
   border-radius: 50%;
   background: var(--app-bg-soft);
-  box-shadow: inset 0 0 rem(24px) rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 0 rem(16px) rgba(15, 23, 42, 0.05);
 }
 
 .scoreDial span {
@@ -139,11 +137,9 @@
   color: var(--app-text);
   font-family: var(--app-font-display);
   font-size: rem(42px);
-  font-weight: 700;
+  font-weight: 780;
   line-height: 1;
-  text-shadow:
-    rem(1px) rem(1px) 0 rgba(255, 79, 216, 0.45),
-    0 0 rem(10px) rgba(66, 248, 255, 0.18);
+  text-shadow: none;
 }
 
 .scoreDial em {
@@ -153,14 +149,14 @@
   font-family: var(--app-font-mono);
   font-size: rem(11px);
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .signalSummary {
   color: var(--app-text);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.35;
 }
 
@@ -186,7 +182,7 @@
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(12px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -201,7 +197,7 @@
   color: var(--app-text);
   font-family: var(--app-font-display);
   font-size: rem(22px);
-  font-weight: 900;
+  font-weight: 760;
   line-height: 1;
 }
 
@@ -225,7 +221,7 @@
   height: 100%;
   padding: rem(14px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
+  border-radius: rem(16px);
   background: var(--app-surface-strong);
 }
 
@@ -262,7 +258,7 @@
 .readmePanel {
   padding: rem(18px);
   border: rem(1px) solid var(--app-border);
-  border-radius: var(--app-radius);
+  border-radius: rem(18px);
   background: var(--app-surface);
   box-shadow: none;
 }
@@ -276,7 +272,7 @@
   min-height: rem(420px);
   overflow: auto;
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
+  border-radius: rem(16px);
   background: var(--app-surface);
 }
 
@@ -286,7 +282,7 @@
   min-height: rem(108px);
   padding: rem(14px);
   border: rem(1px) solid var(--app-border);
-  border-radius: rem(6px);
+  border-radius: rem(16px);
   background: var(--app-surface-strong);
 }
 
@@ -298,17 +294,17 @@
   color: var(--app-text);
   font-family: var(--app-font-mono);
   font-size: rem(24px);
-  font-weight: 900;
+  font-weight: 760;
   font-variant-numeric: tabular-nums;
   line-height: 1;
-  text-shadow: 0 0 rem(10px) rgba(66, 248, 255, 0.16);
+  text-shadow: none;
 }
 
 .metricLabel {
   color: var(--app-text-muted);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -339,7 +335,7 @@
   color: var(--app-accent);
   font-family: var(--app-font-mono);
   font-size: rem(11px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
 }
 

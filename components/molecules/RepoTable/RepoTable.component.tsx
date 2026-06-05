@@ -318,88 +318,84 @@ const RepoTable: React.FC = () => {
 
   return (
     <>
-      <CustomCard>
-        <div className={classes.tableContainer}>
-          <Table
-            className={classes.table}
-            striped
-            highlightOnHover
-            stickyHeader
-            withColumnBorders
-            captionSide="bottom"
-          >
-            <Table.Thead className={classes.tableHead}>
-              <Table.Tr>
-                <Table.Th className={`${classes.rank} ${classes.headerCell}`}>
-                  #
-                </Table.Th>
-                <Table.Th className={`${classes.action} ${classes.headerCell}`}>
-                  Save
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.repository} ${classes.headerCell}`}
-                >
-                  Repository
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.description} ${classes.headerCell}`}
-                >
-                  Description
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.signal} ${classes.headerCell}`}
-                  onClick={() => handleSortChange('signal')}
-                >
-                  <Flex justify="space-between" align="center">
-                    Signal score {getSortIcon('signal')}
-                  </Flex>
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.stars} ${classes.headerCell}`}
-                  onClick={() => handleSortChange('stars')}
-                >
-                  <Flex justify="space-between" align="center">
-                    Stars {getSortIcon('stars')}
-                  </Flex>
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.forks} ${classes.headerCell}`}
-                  onClick={() => handleSortChange('forks')}
-                >
-                  <Flex justify="space-between" align="center">
-                    Forks {getSortIcon('forks')}
-                  </Flex>
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.language} ${classes.headerCell}`}
-                >
-                  Language
-                </Table.Th>
-                <Table.Th
-                  className={`${classes.lastUpdate} ${classes.headerCell}`}
-                  onClick={() => handleSortChange('lastUpdate')}
-                >
-                  <Flex justify="space-between" align="center">
-                    Updated {getSortIcon('lastUpdate')}
-                  </Flex>
-                </Table.Th>
-              </Table.Tr>
-            </Table.Thead>
-            {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
-            {!isLoading && visibleItems.length > 0 && (
-              <Table.Tbody>{rows}</Table.Tbody>
-            )}
-            <Table.Caption>
-              <Flex align="center" className={classes.caption}>
-                <IconAlertCircle size={20} style={{ marginRight: 10 }} />{' '}
-                {visibleItems.length === 0 && !isLoading
-                  ? 'No repositories match the current filters'
-                  : 'Click on a row to inspect repository details'}
-              </Flex>
-            </Table.Caption>
-          </Table>
-        </div>
-      </CustomCard>
+      <div className={classes.tableContainer}>
+        <Table
+          className={classes.table}
+          striped
+          highlightOnHover
+          stickyHeader
+          withColumnBorders
+          captionSide="bottom"
+        >
+          <Table.Thead className={classes.tableHead}>
+            <Table.Tr>
+              <Table.Th className={`${classes.rank} ${classes.headerCell}`}>
+                #
+              </Table.Th>
+              <Table.Th className={`${classes.action} ${classes.headerCell}`}>
+                Save
+              </Table.Th>
+              <Table.Th
+                className={`${classes.repository} ${classes.headerCell}`}
+              >
+                Repository
+              </Table.Th>
+              <Table.Th
+                className={`${classes.description} ${classes.headerCell}`}
+              >
+                Description
+              </Table.Th>
+              <Table.Th
+                className={`${classes.signal} ${classes.headerCell}`}
+                onClick={() => handleSortChange('signal')}
+              >
+                <Flex justify="space-between" align="center">
+                  Signal score {getSortIcon('signal')}
+                </Flex>
+              </Table.Th>
+              <Table.Th
+                className={`${classes.stars} ${classes.headerCell}`}
+                onClick={() => handleSortChange('stars')}
+              >
+                <Flex justify="space-between" align="center">
+                  Stars {getSortIcon('stars')}
+                </Flex>
+              </Table.Th>
+              <Table.Th
+                className={`${classes.forks} ${classes.headerCell}`}
+                onClick={() => handleSortChange('forks')}
+              >
+                <Flex justify="space-between" align="center">
+                  Forks {getSortIcon('forks')}
+                </Flex>
+              </Table.Th>
+              <Table.Th className={`${classes.language} ${classes.headerCell}`}>
+                Language
+              </Table.Th>
+              <Table.Th
+                className={`${classes.lastUpdate} ${classes.headerCell}`}
+                onClick={() => handleSortChange('lastUpdate')}
+              >
+                <Flex justify="space-between" align="center">
+                  Updated {getSortIcon('lastUpdate')}
+                </Flex>
+              </Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          {isLoading && <Table.Tbody>{rowsSkeleton}</Table.Tbody>}
+          {!isLoading && visibleItems.length > 0 && (
+            <Table.Tbody>{rows}</Table.Tbody>
+          )}
+          <Table.Caption>
+            <Flex align="center" className={classes.caption}>
+              <IconAlertCircle size={20} style={{ marginRight: 10 }} />{' '}
+              {visibleItems.length === 0 && !isLoading
+                ? 'No repositories match the current filters'
+                : 'Click on a row to inspect repository details'}
+            </Flex>
+          </Table.Caption>
+        </Table>
+      </div>
       <CustomCard>
         <Center mt="sm">
           <Pagination

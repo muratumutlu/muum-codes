@@ -6,10 +6,10 @@
 }
 
 .input label {
-  color: var(--app-lime);
+  color: var(--app-text);
   font-family: var(--app-font-mono);
-  font-size: rem(12px);
-  font-weight: 800;
+  font-size: rem(13px);
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -17,28 +17,18 @@
 .input input {
   min-height: rem(54px);
   border: rem(1px) solid var(--app-border-strong);
-  border-radius: rem(6px);
-  background: linear-gradient(
-      180deg,
-      rgba(3, 7, 16, 0.92),
-      rgba(12, 20, 44, 0.92)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(66, 248, 255, 0.04) 0 1px,
-      transparent 1px 18px
-    );
+  border-radius: rem(16px);
+  background: #fff;
   color: var(--app-text);
   font-size: rem(18px);
-  box-shadow: inset 0 0 rem(22px) rgba(66, 248, 255, 0.08);
+  box-shadow: 0 rem(10px) rem(28px) rgba(15, 23, 42, 0.05);
 }
 
 .input input:focus {
   border-color: var(--app-accent);
   box-shadow:
-    0 0 0 rem(2px) color-mix(in srgb, var(--app-accent) 22%, transparent),
-    0 rem(6px) 0 var(--app-lime),
-    var(--app-glow-cyan);
+    0 0 0 rem(3px) color-mix(in srgb, var(--app-accent) 16%, transparent),
+    0 rem(12px) rem(32px) rgba(37, 99, 235, 0.08);
 }
 
 .input [data-description] {
