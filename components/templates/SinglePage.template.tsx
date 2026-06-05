@@ -14,7 +14,7 @@ export default function HomeTemplate({
   return (
     <>
       <MetaTags type="singlePage" title={title} />
-      <Container size="xl" mt={80}>
+      <Container size={1536} mt={80}>
         {children}
       </Container>
       <Footer />
